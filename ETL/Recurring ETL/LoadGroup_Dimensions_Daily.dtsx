@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/14/2004 1:02:36 PM"
@@ -13,8 +13,8 @@
   DTS:ObjectName="LoadGroup_Dimensions_Daily"
   DTS:PackageType="5"
   DTS:TransactionOption="0"
-  DTS:VersionBuild="654"
-  DTS:VersionGUID="{9C0E21DB-61A1-4F39-976E-994E2D369F33}">
+  DTS:VersionBuild="655"
+  DTS:VersionGUID="{AFFBA593-D677-4F31-9D50-6AA28E6FE97E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -580,6 +580,7 @@
         <DTS:Executable
           DTS:refId="Package\SEQ Process Dimensions\EPT DimBuyer"
           DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Disabled="True"
           DTS:DTSID="{D281C064-8F81-48D0-949E-A6119A55AB5B}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -597,6 +598,7 @@
         <DTS:Executable
           DTS:refId="Package\SEQ Process Dimensions\EPT DimDCVendor"
           DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Disabled="True"
           DTS:DTSID="{4FBA870A-694B-46B3-8194-8A54CDAECAD1}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -614,6 +616,7 @@
         <DTS:Executable
           DTS:refId="Package\SEQ Process Dimensions\EPT DimDistributionCenter"
           DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Disabled="True"
           DTS:DTSID="{851AEB88-329E-4A6C-A05D-6B18B51CB396}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -648,6 +651,7 @@
         <DTS:Executable
           DTS:refId="Package\SEQ Process Dimensions\EPT DimMerchDiv"
           DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Disabled="True"
           DTS:DTSID="{E423DDA1-76E2-4CB8-A945-563EC64E723F}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -665,6 +669,7 @@
         <DTS:Executable
           DTS:refId="Package\SEQ Process Dimensions\EPT DimReturnType"
           DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Disabled="True"
           DTS:DTSID="{3CCE178D-7DC5-4085-BBAF-82E62872A92D}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -682,6 +687,7 @@
         <DTS:Executable
           DTS:refId="Package\SEQ Process Dimensions\EPT DimStore"
           DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Disabled="True"
           DTS:DTSID="{E0FC45C8-2E25-497F-AF29-62F538A848C4}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -873,7 +879,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="150,44"
           Id="Package\SEQ Process Dimensions\EPT DimBuyer"
@@ -922,7 +928,7 @@
           TopLeft="104.443396226415,49.4245283018868">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="176.415094339623,27.6603773584906"
               Start="0,0"
               End="176.415094339623,20.1603773584906">
@@ -950,7 +956,7 @@
           TopLeft="280.858490566038,328.745283018868">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-176.415094339623,32.3018867924528"
               Start="0,0"
               End="-176.415094339623,24.8018867924528">

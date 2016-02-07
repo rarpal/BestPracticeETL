@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/14/2004 1:02:36 PM"
@@ -13,8 +13,8 @@
   DTS:ObjectName="LoadGroup_Full_Daily"
   DTS:PackageType="5"
   DTS:TransactionOption="0"
-  DTS:VersionBuild="665"
-  DTS:VersionGUID="{8871CEA1-393C-4713-98C0-61CC81D42C36}">
+  DTS:VersionBuild="666"
+  DTS:VersionGUID="{A3B1AF09-1BA3-498E-B65A-0A957310A615}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -535,6 +535,7 @@
       DTS:refId="Package\ASP  Process Dimensions"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{18AAFB62-A4EB-4886-9FAC-5390C781493D}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -551,6 +552,7 @@
       DTS:refId="Package\ASP Process Facts"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{4B3F514B-9D88-4490-8168-ED2B19A4F2C9}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -583,6 +585,7 @@
       DTS:refId="Package\EPT Facts"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{0A45279A-A4DC-4C27-BBE9-73A7588E22EB}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -794,7 +797,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="198,44"
           Id="Package\ASP  Process Dimensions"
@@ -824,7 +827,7 @@
           TopLeft="104.330188679245,49.4245283018869">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,21.5849056603773"
               Start="0,0"
               End="0,14.0849056603773">
@@ -848,7 +851,7 @@
           TopLeft="104.330188679245,114.933962264151">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,21.5849056603773"
               Start="0,0"
               End="0,14.0849056603773">
@@ -870,7 +873,7 @@
           TopLeft="104.330188679245,311.462264150943">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,21.6226415094339"
               Start="0,0"
               End="0,14.1226415094339">
@@ -894,7 +897,7 @@
           TopLeft="104.330188679245,245.952830188679">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,21.5849056603774"
               Start="0,0"
               End="0,14.0849056603774">
@@ -916,7 +919,7 @@
           TopLeft="104.330188679245,180.443396226415">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,21.5849056603773"
               Start="0,0"
               End="0,14.0849056603773">
