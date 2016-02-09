@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Item"
   DTS:PackageType="5"
-  DTS:VersionBuild="981"
-  DTS:VersionGUID="{F9402464-A042-4291-972B-AF5D021E347C}">
+  DTS:VersionBuild="991"
+  DTS:VersionGUID="{E9E4C6ED-A28F-4FF9-A693-D8A4A97E6914}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,7 +24,7 @@
       DTS:ObjectName="SQL_REAL_Configuration">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=(local);Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
+          DTS:ConnectionString="Data Source=paldesk;Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -34,7 +34,7 @@
       DTS:ObjectName="SQL_REAL_Source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=(local);Initial Catalog=REAL_Source_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
+          DTS:ConnectionString="Data Source=paldesk;Initial Catalog=REAL_Source_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -44,7 +44,7 @@
       DTS:ObjectName="SQL_REAL_Warehouse">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=(local);Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
+          DTS:ConnectionString="Data Source=paldesk;Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -19520,7 +19520,8 @@ Public Class ScriptMain
             Dim ticks As Long = CLng(DateTime.Now.Ticks - startTicks)
             If ticks > 0 Then
                 totalTicks += ticks
-                Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                'Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                Dim rate As Integer = CInt(rowCount * (ticks / TimeSpan.TicksPerSecond))
                 rps.Add(rate)
             End If
         End If
@@ -19819,7 +19820,7 @@ End Class
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFnhs1YAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDACoiuVYAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAIAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHA+AABLAAAAAEAAAEgDAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -19841,7 +19842,7 @@ A30IAAAEKgATMAIAIAAAAA4AABECewgAAARvJQAACm8mAAAKchEAAHBvJwAACm8oAAAKKjoCKBcA
 AAoCA30JAAAEKgATMAIAJQAAAA8AABECewkAAARvKQAACnIzAABwbyoAAAooKwAACm8sAAAKKC0A
 AAoqAAAASgIoFAAABgJzLgAACn0OAAAEKgATMAMAlAAAABAAABECewoAAAQWai5oAgJ7DQAABAJ7
 DAAABNZ9DQAABCgvAAAKDBICKDAAAAoCewoAAATaCgYWajE7AgJ7CwAABAbWfQsAAAQCewwAAARs
-IwAAAADQEmNBBmxbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
+BmwjAAAAANASY0FbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
 AAp9CgAABAIDKBYAAAYqPgICewwAAAQX1n0MAAAEKhswBACWAQAAEQAAEQIoMwAACnI/AABwczQA
 AAoMCBpvNQAACghvNgAACnJ9AABwGW83AAAKAnsHAAAEbxsAAAaMJgAAAW84AAAKCG82AAAKcosA
 AHAgyAAAAB8ybzkAAAoCbyUAAApvOgAACm84AAAKCG82AAAKcqkAAHAZbzcAAAoCew0AAASMJgAA
@@ -19946,8 +19947,8 @@ OWE0YWNhNjdlMTYuZGxsAAAAAAAPSQBuAHAAdQB0ACAAMAAAIVMAUQBMAFIAZQBhAGwAVwBhAHIA
 ZQBoAG8AdQBzAGUAAAtMAG8AZwBJAEQAAD1hAHUAZABpAHQALgB1AHAAXwBFAHYAZQBuAHQAXwBQ
 AGEAYwBrAGEAZwBlAF8ATwBuAEMAbwB1AG4AdAAADUAAbABvAGcASQBEAAAdQABjAG8AbQBwAG8A
 bgBlAG4AdABOAGEAbQBlAAALQAByAG8AdwBzAAAPQAB0AGkAbQBlAE0AUwAAHUAAbQBpAG4AUgBv
-AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAcyBI5sKg
-zE6nSFLGdrU6gQAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
+AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAxyB7/1t5
+zEuOjBKRb2r2CgAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
 FRIYARIIBAAAEhEHBhUSGAESEQQAABIUBwYVEhgBEhQECAASDAQIABIIBAgAEhEECAASFAQgAQIc
 AyAACAQgABIVAyAADgIeAAcQAQEeAB4ABzABAQEQHgACEwAEIAATAAcGFRIZARMABCgAEwAIiYRd
 zYCAzJEJIAMBEiEdCBIlAyAAAgMGEiQDBhIoCSAEAQgOEiESJQUgAQESHAMGEikFIAEBEikEIAAS
@@ -20104,7 +20105,8 @@ Public Class ScriptMain
             Dim ticks As Long = CLng(DateTime.Now.Ticks - startTicks)
             If ticks > 0 Then
                 totalTicks += ticks
-                Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                'Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                Dim rate As Integer = CInt(rowCount * (ticks / TimeSpan.TicksPerSecond))
                 rps.Add(rate)
             End If
         End If
@@ -20206,7 +20208,7 @@ End Class
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{07ab664f-3395-4d1f-a5e9-77256bba8439}</ProjectGuid>
+    <ProjectGuid>{07AB664F-3395-4D1F-A5E9-77256BBA8439}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>My Project</AppDesignerFolder>
     <RootNamespace>ScriptComponent_875c2c27f9464d4a9a753ce7213a5e9b</RootNamespace>
@@ -20273,8 +20275,8 @@ End Class
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="SSIS_SC120" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="SSIS_SC120" IconIndex=""></Host>
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="SSIS_SC120" />
         <ProjectClient>
           <HostIdentifier>SSIS_SC120</HostIdentifier>
         </ProjectClient>
@@ -20376,15 +20378,15 @@ End Class
                           dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
-		<msb:CodeName>ScriptComponent_875c2c27f9464d4a9a753ce7213a5e9b</msb:CodeName>
 		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ScriptComponent_875c2c27f9464d4a9a753ce7213a5e9b</msb:CodeName>
 		<msb:DisplayName>ScriptComponent_875c2c27f9464d4a9a753ce7213a5e9b</msb:DisplayName>
 		<msb:ProjectId>{6CF8F704-193E-401C-81BE-1645D8C84A2E}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="ScriptComponent_875c2c27f9464d4a9a753ce7213a5e9b.vbproj"/>
-		<msb:File Include="ComponentWrapper.vb"/>
 		<msb:File Include="ScriptMain.vb"/>
+		<msb:File Include="ComponentWrapper.vb"/>
 		<msb:File Include="BufferWrapper.vb"/>
 	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
@@ -20403,7 +20405,7 @@ End Class
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFnhs1YAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHoiuVYAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAIAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHA+AABLAAAAAEAAAEgDAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -20425,7 +20427,7 @@ A30IAAAEKgATMAIAIAAAAA4AABECewgAAARvJQAACm8mAAAKchEAAHBvJwAACm8oAAAKKjoCKBcA
 AAoCA30JAAAEKgATMAIAJQAAAA8AABECewkAAARvKQAACnIzAABwbyoAAAooKwAACm8sAAAKKC0A
 AAoqAAAASgIoFAAABgJzLgAACn0OAAAEKgATMAMAlAAAABAAABECewoAAAQWai5oAgJ7DQAABAJ7
 DAAABNZ9DQAABCgvAAAKDBICKDAAAAoCewoAAATaCgYWajE7AgJ7CwAABAbWfQsAAAQCewwAAARs
-IwAAAADQEmNBBmxbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
+BmwjAAAAANASY0FbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
 AAp9CgAABAIDKBYAAAYqPgICewwAAAQX1n0MAAAEKhswBACWAQAAEQAAEQIoMwAACnI/AABwczQA
 AAoMCBpvNQAACghvNgAACnJ9AABwGW83AAAKAnsHAAAEbxsAAAaMJgAAAW84AAAKCG82AAAKcosA
 AHAgyAAAAB8ybzkAAAoCbyUAAApvOgAACm84AAAKCG82AAAKcqkAAHAZbzcAAAoCew0AAASMJgAA
@@ -20530,8 +20532,8 @@ Y2U3MjEzYTVlOWIuZGxsAAAAAAAPSQBuAHAAdQB0ACAAMAAAIVMAUQBMAFIAZQBhAGwAVwBhAHIA
 ZQBoAG8AdQBzAGUAAAtMAG8AZwBJAEQAAD1hAHUAZABpAHQALgB1AHAAXwBFAHYAZQBuAHQAXwBQ
 AGEAYwBrAGEAZwBlAF8ATwBuAEMAbwB1AG4AdAAADUAAbABvAGcASQBEAAAdQABjAG8AbQBwAG8A
 bgBlAG4AdABOAGEAbQBlAAALQAByAG8AdwBzAAAPQAB0AGkAbQBlAE0AUwAAHUAAbQBpAG4AUgBv
-AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAzVwp8K6E
-PEOZF6lrm/P2DQAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
+AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAALlrmEFMx
+2kKtLBY/ueMaewAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
 FRIYARIIBAAAEhEHBhUSGAESEQQAABIUBwYVEhgBEhQECAASDAQIABIIBAgAEhEECAASFAQgAQIc
 AyAACAQgABIVAyAADgIeAAcQAQEeAB4ABzABAQEQHgACEwAEIAATAAcGFRIZARMABCgAEwAIiYRd
 zYCAzJEJIAMBEiEdCBIlAyAAAgMGEiQDBhIoCSAEAQgOEiESJQUgAQESHAMGEikFIAEBEikEIAAS
@@ -20688,7 +20690,8 @@ Public Class ScriptMain
             Dim ticks As Long = CLng(DateTime.Now.Ticks - startTicks)
             If ticks > 0 Then
                 totalTicks += ticks
-                Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                'Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                Dim rate As Integer = CInt(rowCount * (ticks / TimeSpan.TicksPerSecond))
                 rps.Add(rate)
             End If
         End If
@@ -20987,7 +20990,7 @@ End Class
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFrhs1YAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMoiuVYAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAIAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHA+AABLAAAAAEAAAEgDAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -21009,7 +21012,7 @@ A30IAAAEKgATMAIAIAAAAA4AABECewgAAARvJQAACm8mAAAKchEAAHBvJwAACm8oAAAKKjoCKBcA
 AAoCA30JAAAEKgATMAIAJQAAAA8AABECewkAAARvKQAACnIzAABwbyoAAAooKwAACm8sAAAKKC0A
 AAoqAAAASgIoFAAABgJzLgAACn0OAAAEKgATMAMAlAAAABAAABECewoAAAQWai5oAgJ7DQAABAJ7
 DAAABNZ9DQAABCgvAAAKDBICKDAAAAoCewoAAATaCgYWajE7AgJ7CwAABAbWfQsAAAQCewwAAARs
-IwAAAADQEmNBBmxbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
+BmwjAAAAANASY0FbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
 AAp9CgAABAIDKBYAAAYqPgICewwAAAQX1n0MAAAEKhswBACWAQAAEQAAEQIoMwAACnI/AABwczQA
 AAoMCBpvNQAACghvNgAACnJ9AABwGW83AAAKAnsHAAAEbxsAAAaMJgAAAW84AAAKCG82AAAKcosA
 AHAgyAAAAB8ybzkAAAoCbyUAAApvOgAACm84AAAKCG82AAAKcqkAAHAZbzcAAAoCew0AAASMJgAA
@@ -21114,8 +21117,8 @@ ZGQ1NDY1NWViNDIuZGxsAAAAAAAPSQBuAHAAdQB0ACAAMAAAIVMAUQBMAFIAZQBhAGwAVwBhAHIA
 ZQBoAG8AdQBzAGUAAAtMAG8AZwBJAEQAAD1hAHUAZABpAHQALgB1AHAAXwBFAHYAZQBuAHQAXwBQ
 AGEAYwBrAGEAZwBlAF8ATwBuAEMAbwB1AG4AdAAADUAAbABvAGcASQBEAAAdQABjAG8AbQBwAG8A
 bgBlAG4AdABOAGEAbQBlAAALQAByAG8AdwBzAAAPQAB0AGkAbQBlAE0AUwAAHUAAbQBpAG4AUgBv
-AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAQO2voen4
-j0aaJRLi5PQ9tQAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
+AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAyJa91zCc
+BUaMg7kwtgKzYgAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
 FRIYARIIBAAAEhEHBhUSGAESEQQAABIUBwYVEhgBEhQECAASDAQIABIIBAgAEhEECAASFAQgAQIc
 AyAACAQgABIVAyAADgIeAAcQAQEeAB4ABzABAQEQHgACEwAEIAATAAcGFRIZARMABCgAEwAIiYRd
 zYCAzJEJIAMBEiEdCBIlAyAAAgMGEiQDBhIoCSAEAQgOEiESJQUgAQESHAMGEikFIAEBEikEIAAS
@@ -21272,7 +21275,8 @@ Public Class ScriptMain
             Dim ticks As Long = CLng(DateTime.Now.Ticks - startTicks)
             If ticks > 0 Then
                 totalTicks += ticks
-                Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                'Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                Dim rate As Integer = CInt(rowCount * (ticks / TimeSpan.TicksPerSecond))
                 rps.Add(rate)
             End If
         End If
@@ -21374,7 +21378,7 @@ End Class
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{fc850e40-b8e5-44eb-9de5-aeee7834b980}</ProjectGuid>
+    <ProjectGuid>{FC850E40-B8E5-44EB-9DE5-AEEE7834B980}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>My Project</AppDesignerFolder>
     <RootNamespace>ScriptComponent_145571755c7d47e08c94eaa6d16805b8</RootNamespace>
@@ -21441,8 +21445,8 @@ End Class
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="SSIS_SC120" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="SSIS_SC120" IconIndex=""></Host>
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="SSIS_SC120" />
         <ProjectClient>
           <HostIdentifier>SSIS_SC120</HostIdentifier>
         </ProjectClient>
@@ -21571,7 +21575,7 @@ End Class
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFrhs1YAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAKUiuVYAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAIAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHA+AABLAAAAAEAAAEgDAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -21593,7 +21597,7 @@ A30IAAAEKgATMAIAIAAAAA4AABECewgAAARvJQAACm8mAAAKchEAAHBvJwAACm8oAAAKKjoCKBcA
 AAoCA30JAAAEKgATMAIAJQAAAA8AABECewkAAARvKQAACnIzAABwbyoAAAooKwAACm8sAAAKKC0A
 AAoqAAAASgIoFAAABgJzLgAACn0OAAAEKgATMAMAlAAAABAAABECewoAAAQWai5oAgJ7DQAABAJ7
 DAAABNZ9DQAABCgvAAAKDBICKDAAAAoCewoAAATaCgYWajE7AgJ7CwAABAbWfQsAAAQCewwAAARs
-IwAAAADQEmNBBmxbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
+BmwjAAAAANASY0FbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
 AAp9CgAABAIDKBYAAAYqPgICewwAAAQX1n0MAAAEKhswBACWAQAAEQAAEQIoMwAACnI/AABwczQA
 AAoMCBpvNQAACghvNgAACnJ9AABwGW83AAAKAnsHAAAEbxsAAAaMJgAAAW84AAAKCG82AAAKcosA
 AHAgyAAAAB8ybzkAAAoCbyUAAApvOgAACm84AAAKCG82AAAKcqkAAHAZbzcAAAoCew0AAASMJgAA
@@ -21698,8 +21702,8 @@ YWE2ZDE2ODA1YjguZGxsAAAAAAAPSQBuAHAAdQB0ACAAMAAAIVMAUQBMAFIAZQBhAGwAVwBhAHIA
 ZQBoAG8AdQBzAGUAAAtMAG8AZwBJAEQAAD1hAHUAZABpAHQALgB1AHAAXwBFAHYAZQBuAHQAXwBQ
 AGEAYwBrAGEAZwBlAF8ATwBuAEMAbwB1AG4AdAAADUAAbABvAGcASQBEAAAdQABjAG8AbQBwAG8A
 bgBlAG4AdABOAGEAbQBlAAALQAByAG8AdwBzAAAPQAB0AGkAbQBlAE0AUwAAHUAAbQBpAG4AUgBv
-AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAX5Z7CpFB
-LUaTSNSAUI9DsQAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
+AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAdoOZWjpw
+XkCssjyb8RP/vAAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
 FRIYARIIBAAAEhEHBhUSGAESEQQAABIUBwYVEhgBEhQECAASDAQIABIIBAgAEhEECAASFAQgAQIc
 AyAACAQgABIVAyAADgIeAAcQAQEeAB4ABzABAQEQHgACEwAEIAATAAcGFRIZARMABCgAEwAIiYRd
 zYCAzJEJIAMBEiEdCBIlAyAAAgMGEiQDBhIoCSAEAQgOEiESJQUgAQESHAMGEikFIAEBEikEIAAS
@@ -21856,7 +21860,8 @@ Public Class ScriptMain
             Dim ticks As Long = CLng(DateTime.Now.Ticks - startTicks)
             If ticks > 0 Then
                 totalTicks += ticks
-                Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                'Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                Dim rate As Integer = CInt(rowCount * (ticks / TimeSpan.TicksPerSecond))
                 rps.Add(rate)
             End If
         End If
@@ -22155,7 +22160,7 @@ End Class
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFrhs1YAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAPgiuVYAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAIAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHA+AABLAAAAAEAAAEgDAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -22177,7 +22182,7 @@ A30IAAAEKgATMAIAIAAAAA4AABECewgAAARvJQAACm8mAAAKchEAAHBvJwAACm8oAAAKKjoCKBcA
 AAoCA30JAAAEKgATMAIAJQAAAA8AABECewkAAARvKQAACnIzAABwbyoAAAooKwAACm8sAAAKKC0A
 AAoqAAAASgIoFAAABgJzLgAACn0OAAAEKgATMAMAlAAAABAAABECewoAAAQWai5oAgJ7DQAABAJ7
 DAAABNZ9DQAABCgvAAAKDBICKDAAAAoCewoAAATaCgYWajE7AgJ7CwAABAbWfQsAAAQCewwAAARs
-IwAAAADQEmNBBmxbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
+BmwjAAAAANASY0FbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
 AAp9CgAABAIDKBYAAAYqPgICewwAAAQX1n0MAAAEKhswBACWAQAAEQAAEQIoMwAACnI/AABwczQA
 AAoMCBpvNQAACghvNgAACnJ9AABwGW83AAAKAnsHAAAEbxsAAAaMJgAAAW84AAAKCG82AAAKcosA
 AHAgyAAAAB8ybzkAAAoCbyUAAApvOgAACm84AAAKCG82AAAKcqkAAHAZbzcAAAoCew0AAASMJgAA
@@ -22282,8 +22287,8 @@ OTFhZjc3MmE0N2IuZGxsAAAAAAAPSQBuAHAAdQB0ACAAMAAAIVMAUQBMAFIAZQBhAGwAVwBhAHIA
 ZQBoAG8AdQBzAGUAAAtMAG8AZwBJAEQAAD1hAHUAZABpAHQALgB1AHAAXwBFAHYAZQBuAHQAXwBQ
 AGEAYwBrAGEAZwBlAF8ATwBuAEMAbwB1AG4AdAAADUAAbABvAGcASQBEAAAdQABjAG8AbQBwAG8A
 bgBlAG4AdABOAGEAbQBlAAALQAByAG8AdwBzAAAPQAB0AGkAbQBlAE0AUwAAHUAAbQBpAG4AUgBv
-AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAnAv8AvWr
-9UGMv7yOe61HqgAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
+AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAG0SDm9zR
+qUewQd+TUMrvlwAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
 FRIYARIIBAAAEhEHBhUSGAESEQQAABIUBwYVEhgBEhQECAASDAQIABIIBAgAEhEECAASFAQgAQIc
 AyAACAQgABIVAyAADgIeAAcQAQEeAB4ABzABAQEQHgACEwAEIAATAAcGFRIZARMABCgAEwAIiYRd
 zYCAzJEJIAMBEiEdCBIlAyAAAgMGEiQDBhIoCSAEAQgOEiESJQUgAQESHAMGEikFIAEBEikEIAAS
@@ -22556,7 +22561,8 @@ Public Class ScriptMain
             Dim ticks As Long = CLng(DateTime.Now.Ticks - startTicks)
             If ticks > 0 Then
                 totalTicks += ticks
-                Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                'Dim rate As Integer = CInt(rowCount * (TimeSpan.TicksPerSecond / ticks))
+                Dim rate As Integer = CInt(rowCount * (ticks / TimeSpan.TicksPerSecond))
                 rps.Add(rate)
             End If
         End If
@@ -22738,7 +22744,7 @@ End Class
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFnhs1YAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMAhuVYAAAAAAAAAAOAAAiELAQsAACAAAAAGAAAAAAAAvj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAIAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHA+AABLAAAAAEAAAEgDAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -22760,7 +22766,7 @@ A30IAAAEKgATMAIAIAAAAA4AABECewgAAARvJQAACm8mAAAKchEAAHBvJwAACm8oAAAKKjoCKBcA
 AAoCA30JAAAEKgATMAIAJQAAAA8AABECewkAAARvKQAACnIzAABwbyoAAAooKwAACm8sAAAKKC0A
 AAoqAAAASgIoFAAABgJzLgAACn0OAAAEKgATMAMAlAAAABAAABECewoAAAQWai5oAgJ7DQAABAJ7
 DAAABNZ9DQAABCgvAAAKDBICKDAAAAoCewoAAATaCgYWajE7AgJ7CwAABAbWfQsAAAQCewwAAARs
-IwAAAADQEmNBBmxbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
+BmwjAAAAANASY0FbWigxAAAKtwsCew4AAAQHjCYAAAFvMgAACiYCFn0MAAAEAigvAAAKDBICKDAA
 AAp9CgAABAIDKBYAAAYqPgICewwAAAQX1n0MAAAEKhswBACWAQAAEQAAEQIoMwAACnI/AABwczQA
 AAoMCBpvNQAACghvNgAACnJ9AABwGW83AAAKAnsHAAAEbxsAAAaMJgAAAW84AAAKCG82AAAKcosA
 AHAgyAAAAB8ybzkAAAoCbyUAAApvOgAACm84AAAKCG82AAAKcqkAAHAZbzcAAAoCew0AAASMJgAA
@@ -22865,8 +22871,8 @@ NDY3ODMzYzI2NjYuZGxsAAAAAAAPSQBuAHAAdQB0ACAAMAAAIVMAUQBMAFIAZQBhAGwAVwBhAHIA
 ZQBoAG8AdQBzAGUAAAtMAG8AZwBJAEQAAD1hAHUAZABpAHQALgB1AHAAXwBFAHYAZQBuAHQAXwBQ
 AGEAYwBrAGEAZwBlAF8ATwBuAEMAbwB1AG4AdAAADUAAbABvAGcASQBEAAAdQABjAG8AbQBwAG8A
 bgBlAG4AdABOAGEAbQBlAAALQAByAG8AdwBzAAAPQAB0AGkAbQBlAE0AUwAAHUAAbQBpAG4AUgBv
-AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAcyq4uLFq
-Skq5qsut8i+aNAAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
+AHcAcwBQAGUAcgBTAGUAYwAAHUAAbQBhAHgAUgBvAHcAcwBQAGUAcgBTAGUAYwAAAAAAb3HK3YB7
+wEGzhlICg+IjFAAIt3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcG
 FRIYARIIBAAAEhEHBhUSGAESEQQAABIUBwYVEhgBEhQECAASDAQIABIIBAgAEhEECAASFAQgAQIc
 AyAACAQgABIVAyAADgIeAAcQAQEeAB4ABzABAQEQHgACEwAEIAATAAcGFRIZARMABCgAEwAIiYRd
 zYCAzJEJIAMBEiEdCBIlAyAAAgMGEiQDBhIoCSAEAQgOEiESJQUgAQESHAMGEikFIAEBEikEIAAS
@@ -23442,7 +23448,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="253,44"
           Id="Package\SEQ Land Business Keys\DFT KeyLog"
@@ -23466,13 +23472,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="DFT Load Log SysIDs: Capture the SysIDs that have changed&#xA;or are new so that they can be used to filter the dimension&#xA;records during the main processing."
           ParentId="Package\SEQ Land Business Keys"
-          Size="360,67"
+          Size="360,NaN"
           Id="77e8ac7b-d659-47b5-b268-c9a89542f834"
           TopLeft="332.641509433962,102.811320754717">
           <AnnotationLayout.FontInfo>
@@ -23829,5 +23837,761 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\SEQ Land Business Keys\DFT KeyLog">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138,42"
+          Id="Package\SEQ Land Business Keys\DFT KeyLog\DST KeyLog"
+          TopLeft="8.50000000000003,209.5" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\SEQ Land Business Keys\DFT KeyLog\DER Audit"
+          TopLeft="13.5,107.5" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\SEQ Land Business Keys\DFT KeyLog\SRC DimItem"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package\SEQ Land Business Keys\DFT KeyLog.Paths[OLE DB Source Output]"
+          TopLeft="77.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Land Business Keys\DFT KeyLog.Paths[Derived Column Output]"
+          TopLeft="77.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\SEQ Load Data\DFT DimItem">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="141,42"
+          Id="Package\SEQ Load Data\DFT DimItem\STAT Source"
+          TopLeft="210,107.5" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\SEQ Load Data\DFT DimItem\STAT SCD-2"
+          TopLeft="657.5,617.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\SEQ Load Data\DFT DimItem\Left Join"
+          TopLeft="220,311.5" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\SEQ Load Data\DFT DimItem\CSPL SCD"
+          TopLeft="217,413.5" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DER Audit"
+          TopLeft="216.5,209.5" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\SEQ Load Data\DFT DimItem\SRC DW"
+          TopLeft="20.5,107.5" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DER Has_Sales FALSE"
+          TopLeft="391.5,719.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\SEQ Load Data\DFT DimItem\STAT New"
+          TopLeft="215.5,617.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\SEQ Load Data\DFT DimItem\STAT Inferred"
+          TopLeft="72.0000000000001,515.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE"
+          TopLeft="636,719.5" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\SEQ Load Data\DFT DimItem\SRC DimItem"
+          TopLeft="208.5,5.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\SEQ Load Data\DFT DimItem\STAT DimItem"
+          TopLeft="5.50000000000011,209.5" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\SEQ Load Data\DFT DimItem\Multicast"
+          TopLeft="440.5,515.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DST SCD2 Inactive Log"
+          TopLeft="406.5,617.5" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\SEQ Load Data\DFT DimItem\STAT SCD-1"
+          TopLeft="623.5,515.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DST Inferred"
+          TopLeft="12.5000000000001,617.5" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DER Flags"
+          TopLeft="662.5,923.5" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DST Insert"
+          TopLeft="661,1025.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\SEQ Load Data\DFT DimItem\ALL New and Type2"
+          TopLeft="639,821.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DST SCD-1"
+          TopLeft="856,617.5" />
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 01]"
+          TopLeft="692.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="230,60"
+              Start="0,0"
+              End="230,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="226,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="226,30"
+                    Point2="230,30"
+                    Point3="230,34" />
+                  <mssgle:LineSegment
+                    End="230,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 0]"
+          TopLeft="726.5,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output1]"
+          TopLeft="280.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
+          TopLeft="80.5000000000001,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[No Sales and Inferred]"
+          TopLeft="244.8,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-99.3,60"
+              Start="0,0"
+              End="-99.3,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.2694414019715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.2694414019715"
+                    Point2="0,18.2694414019715"
+                    Point3="-4,18.2694414019715" />
+                  <mssgle:LineSegment
+                    End="-95.3,18.2694414019715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-95.3,18.2694414019715"
+                    Point2="-99.3,18.2694414019715"
+                    Point3="-99.3,22.2694414019715" />
+                  <mssgle:LineSegment
+                    End="-99.3,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-98.15798828125,23.2694414019715,97.0159765625,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[New]"
+          TopLeft="268.6,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="11.9,162"
+              Start="0,0"
+              End="11.9,154.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.6255430060817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,68.6255430060817"
+                    Point2="0,72.6255430060817"
+                    Point3="4,72.6255430060817" />
+                  <mssgle:LineSegment
+                    End="7.89999999999998,72.6255430060817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.89999999999998,72.6255430060817"
+                    Point2="11.9,72.6255430060817"
+                    Point3="11.9,76.6255430060817" />
+                  <mssgle:LineSegment
+                    End="11.9,154.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.28404296875001,77.6255430060817,20.4680859375,9.3974609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Multicast Output 2]"
+          TopLeft="482.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="19,60"
+              Start="0,0"
+              End="19,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4660194174757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4660194174757"
+                    Point2="0,24.4660194174757"
+                    Point3="4,24.4660194174757" />
+                  <mssgle:LineSegment
+                    End="15,24.4660194174757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15,24.4660194174757"
+                    Point2="19,24.4660194174757"
+                    Point3="19,28.4660194174757" />
+                  <mssgle:LineSegment
+                    End="19,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Multicast Output 1]"
+          TopLeft="520.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="206,60"
+              Start="0,0"
+              End="206,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4660194174757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4660194174757"
+                    Point2="0,24.4660194174757"
+                    Point3="4,24.4660194174757" />
+                  <mssgle:LineSegment
+                    End="202,24.4660194174757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="202,24.4660194174757"
+                    Point2="206,24.4660194174757"
+                    Point3="206,28.4660194174757" />
+                  <mssgle:LineSegment
+                    End="206,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Merge Join Output]"
+          TopLeft="280.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output3]"
+          TopLeft="726.5,761.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="27.8333333333334,60"
+              Start="0,0"
+              End="27.8333333333334,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.673839184598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.673839184598"
+                    Point2="0,35.673839184598"
+                    Point3="4,35.673839184598" />
+                  <mssgle:LineSegment
+                    End="23.8333333333334,35.673839184598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.8333333333334,35.673839184598"
+                    Point2="27.8333333333334,35.673839184598"
+                    Point3="27.8333333333334,39.673839184598" />
+                  <mssgle:LineSegment
+                    End="27.8333333333334,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output2]"
+          TopLeft="483.5,761.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="215.166666666667,60"
+              Start="0,0"
+              End="215.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.673839184598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.673839184598"
+                    Point2="0,35.673839184598"
+                    Point3="4,35.673839184598" />
+                  <mssgle:LineSegment
+                    End="211.166666666667,35.673839184598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="211.166666666667,35.673839184598"
+                    Point2="215.166666666667,35.673839184598"
+                    Point3="215.166666666667,39.673839184598" />
+                  <mssgle:LineSegment
+                    End="215.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output1]"
+          TopLeft="726.5,965.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output]"
+          TopLeft="280.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="18.8333333333333,60"
+              Start="0,0"
+              End="18.8333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="14.8333333333333,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8333333333333,35.5301794453507"
+                    Point2="18.8333333333333,35.5301794453507"
+                    Point3="18.8333333333333,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="18.8333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Union All Output 1]"
+          TopLeft="726.5,863.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Type 2 Update]"
+          TopLeft="292.4,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="209.1,60"
+              Start="0,0"
+              End="209.1,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8983492615117" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.8983492615117"
+                    Point2="0,26.8983492615117"
+                    Point3="4,26.8983492615117" />
+                  <mssgle:LineSegment
+                    End="205.1,26.8983492615117" />
+                  <mssgle:CubicBezierSegment
+                    Point1="205.1,26.8983492615117"
+                    Point2="209.1,26.8983492615117"
+                    Point3="209.1,30.8983492615117" />
+                  <mssgle:LineSegment
+                    End="209.1,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="71.27755859375,31.8983492615117,66.5448828125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Type 1 Update]"
+          TopLeft="316.2,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="376.3,60"
+              Start="0,0"
+              End="376.3,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.2694414019715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.2694414019715"
+                    Point2="0,18.2694414019715"
+                    Point3="4,18.2694414019715" />
+                  <mssgle:LineSegment
+                    End="372.3,18.2694414019715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="372.3,18.2694414019715"
+                    Point2="376.3,18.2694414019715"
+                    Point3="376.3,22.2694414019715" />
+                  <mssgle:LineSegment
+                    End="376.3,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="154.87755859375,23.2694414019715,66.5448828125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 05]"
+          TopLeft="280.5,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="203,59.9999999999999"
+              Start="0,0"
+              End="203,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.9999999999999"
+                    Point2="0,29.9999999999999"
+                    Point3="4,29.9999999999999" />
+                  <mssgle:LineSegment
+                    End="199,29.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="199,29.9999999999999"
+                    Point2="203,29.9999999999999"
+                    Point3="203,33.9999999999999" />
+                  <mssgle:LineSegment
+                    End="203,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 04]"
+          TopLeft="145.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-62,60.0000000000001"
+              Start="0,0"
+              End="-62,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0000000000001"
+                    Point2="0,30.0000000000001"
+                    Point3="-4,30.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-58,30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58,30.0000000000001"
+                    Point2="-62,30.0000000000001"
+                    Point3="-62,34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-62,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 03]"
+          TopLeft="80.5000000000001,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="181.166666666667,60"
+              Start="0,0"
+              End="181.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="177.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="177.166666666667,35.5301794453507"
+                    Point2="181.166666666667,35.5301794453507"
+                    Point3="181.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="181.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 02]"
+          TopLeft="280.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
