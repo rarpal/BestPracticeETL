@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="64dc3b12-9228-47cc-ad3c-d2eec220ef60" ChangeDateTime="02/10/2016 21:47:03">
+    <Property Name="ElementName" Value="[audit].[ReduceLog].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[audit].[ReduceLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LogId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="381f1b38-0bfd-4c04-86ce-15ee37e54c69" ChangeDateTime="02/10/2016 21:47:18">
+    <Property Name="ElementName" Value="[audit].[ReduceLog].[LogId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[audit].[ReduceLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LogID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="30229b6a-619e-4833-b030-57710ef40fc4" ChangeDateTime="02/10/2016 22:03:22">
+    <Property Name="ElementName" Value="[audit].[ReduceLog].[Duplicates]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[audit].[ReduceLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RowNumber" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d3dd5103-c5c2-4950-96d9-b965dbd16722" ChangeDateTime="02/10/2016 22:30:14">
+    <Property Name="ElementName" Value="[audit].[ReduceLog].[Key]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[audit].[ReduceLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="KeyValue" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f5f93a4c-7d34-4393-a606-782224548206" ChangeDateTime="02/10/2016 22:35:16">
+    <Property Name="ElementName" Value="[audit].[PK_ReduceLog]" />
+    <Property Name="ElementType" Value="SqlPrimaryKeyConstraint" />
+    <Property Name="ParentElementName" Value="[audit].[ReduceLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[cix_ReduceLog]" />
+  </Operation>
+</Operations>
