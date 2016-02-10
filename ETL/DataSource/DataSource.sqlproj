@@ -60,7 +60,7 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="etl.uf_DimItem.sql" />
+    <None Include="etl.uf_DimItem.sql" />
     <Build Include="etl.sql" />
   </ItemGroup>
 </Project>
