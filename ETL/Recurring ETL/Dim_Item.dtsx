@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Item"
   DTS:PackageType="5"
-  DTS:VersionBuild="992"
-  DTS:VersionGUID="{D42C540B-5E49-4E41-8493-0F6FD80CCBB9}">
+  DTS:VersionBuild="994"
+  DTS:VersionGUID="{02E63D50-EA91-41D3-819E-66D384A15DEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6752,7 +6752,7 @@
                           length="50"
                           lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[Rejects]"
                           name="Rejects"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               containsID="true"
@@ -16558,19 +16558,19 @@ FROM dbo.tbl_Dim_Item</property>
                           externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
                           lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogID]" />
                         <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ComponentName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ComponentName"
-                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[ComponentName]" />
-                        <inputColumn
                           refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rn]"
                           cachedDataType="i8"
                           cachedName="rn"
                           externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowNumber]"
                           lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[rn]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ComponentName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ComponentName"
+                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentName]"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[ComponentName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -16578,12 +16578,6 @@ FROM dbo.tbl_Dim_Item</property>
                           refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
                           dataType="i4"
                           name="LogID" />
-                        <externalMetadataColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="TableName" />
                         <externalMetadataColumn
                           refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyValue]"
                           codePage="1252"
@@ -16604,6 +16598,12 @@ FROM dbo.tbl_Dim_Item</property>
                           refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogTime]"
                           dataType="dbTimeStamp"
                           name="LogTime" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ComponentName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -24314,13 +24314,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="135.773584905661,43.9245283018868"
+          Size="136,44"
           Id="Package.EventHandlers[OnError]\SQL OnError"
           TopLeft="5.5,5.5" />
         <AnnotationLayout
           Text="SQL OnError: Executes when an error ocurs&#xA;during the execution of a package and marks the audit log&#xA;tables with the error status and time."
           ParentId="Package.EventHandlers[OnError]"
-          Size="318.301886792453,NaN"
+          Size="318,80"
           Id="7371b3d8-d70b-4d18-8ce7-fd2da018c131"
           TopLeft="164.254716981132,5.5">
           <AnnotationLayout.FontInfo>
