@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Item"
   DTS:PackageType="5"
-  DTS:VersionBuild="991"
-  DTS:VersionGUID="{E9E4C6ED-A28F-4FF9-A693-D8A4A97E6914}">
+  DTS:VersionBuild="992"
+  DTS:VersionGUID="{D42C540B-5E49-4E41-8493-0F6FD80CCBB9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,7 +24,7 @@
       DTS:ObjectName="SQL_REAL_Configuration">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=paldesk;Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -34,7 +34,7 @@
       DTS:ObjectName="SQL_REAL_Source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=paldesk;Initial Catalog=REAL_Source_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=REAL_Source_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -44,7 +44,7 @@
       DTS:ObjectName="SQL_REAL_Warehouse">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=paldesk;Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -5580,6 +5580,95 @@
                   </outputs>
                 </component>
                 <component
+                  refId="Package\SEQ Load Data\DFT DimItem\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Inputs[Conditional Split Input].Columns[rn]"
+                          cachedDataType="i8"
+                          cachedName="rn"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[rn]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Rejects]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Rejects"
+                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[rn]} &gt; 1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">rn &gt; 1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\SEQ Load Data\DFT DimItem\CSPL SCD"
                   componentClassID="Microsoft.ConditionalSplit"
                   contactInfo="Conditional Split;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -6540,6 +6629,209 @@
                           refId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQ Load Data\DFT DimItem\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[SYSID]"
+                          cachedDataType="i4"
+                          cachedName="SYSID"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[SYSID]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[ASSORTMENT_DESC]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="ASSORTMENT_DESC"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[ASSORTMENT_DESC]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[AUDIENCE_CODE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="AUDIENCE_CODE"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[AUDIENCE_CODE]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[BN_ORIG_DISCOUNT_SCHED]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="BN_ORIG_DISCOUNT_SCHED"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_ORIG_DISCOUNT_SCHED]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[BN_RETAIL]"
+                          cachedDataType="numeric"
+                          cachedName="BN_RETAIL"
+                          cachedPrecision="9"
+                          cachedScale="2"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_RETAIL]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[ComponentName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[ComponentName]"
+                          name="ComponentName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,50,1252)"DimItem"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,50,1252)"DimItem"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[KeyValue]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[KeyValue]"
+                          name="KeyValue"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,50,1252)((DT_STR,50,1252)"SYSID:" + (DT_STR,50,1252)#{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[SYSID]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,50,1252)((DT_STR,50,1252)"SYSID:" + (DT_STR,50,1252)SYSID)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[Rejects]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[Rejects]"
+                          name="Rejects"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,50,1252)("ASSORTMENT_DESC:" + #{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[ASSORTMENT_DESC]} + ",AUDIENCE_CODE:" + #{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[AUDIENCE_CODE]} + ",BN_ORIG_DISCOUNT_SCHED:" + #{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_ORIG_DISCOUNT_SCHED]} + ",BN_RETAIL" + (DT_STR,50,1252)#{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_RETAIL]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,50,1252)("ASSORTMENT_DESC:" + ASSORTMENT_DESC + ",AUDIENCE_CODE:" + AUDIENCE_CODE + ",BN_ORIG_DISCOUNT_SCHED:" + BN_ORIG_DISCOUNT_SCHED + ",BN_RETAIL" + (DT_STR,50,1252)BN_RETAIL)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogTime]"
+                          name="LogTime"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogID]"
+                          name="LogID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[LogID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@LogID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -16166,6 +16458,181 @@ FROM dbo.tbl_Dim_Item</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[audit].[RejectsLog]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[SQL_REAL_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[SQL_REAL_Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[KeyValue]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="KeyValue"
+                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyValue]"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[KeyValue]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rejects]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Rejects"
+                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rejects]"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[Rejects]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LogTime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="LogTime"
+                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogTime]"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogTime]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LogID]"
+                          cachedDataType="i4"
+                          cachedName="LogID"
+                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogID]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ComponentName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ComponentName"
+                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[ComponentName]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rn]"
+                          cachedDataType="i8"
+                          cachedName="rn"
+                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowNumber]"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[rn]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
+                          dataType="i4"
+                          name="LogID" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TableName" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyValue]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="KeyValue" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowNumber]"
+                          dataType="i4"
+                          name="RowNumber" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rejects]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1000"
+                          name="Rejects" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogTime]"
+                          dataType="dbTimeStamp"
+                          name="LogTime" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\SEQ Load Data\DFT DimItem\SRC DimItem"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; © 2004 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -17569,6 +18036,15 @@ FROM dbo.tbl_Dim_Item</property>
                           precision="6"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[rn]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].ExternalColumns[rn]"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[rn]"
+                          name="rn"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -18276,6 +18752,10 @@ FROM dbo.tbl_Dim_Item</property>
                           name="WIDTH_NUM"
                           precision="6"
                           scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].ExternalColumns[rn]"
+                          dataType="i8"
+                          name="rn" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -19112,6 +19592,11 @@ FROM dbo.tbl_Dim_Item</property>
                           length="1"
                           lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Error Output].Columns[WEB_FLAG]"
                           name="WEB_FLAG" />
+                        <outputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Error Output].Columns[rn]"
+                          dataType="i8"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Error Output].Columns[rn]"
+                          name="rn" />
                         <outputColumn
                           refId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Error Output].Columns[WEIGHT_NUM]"
                           dataType="numeric"
@@ -22989,10 +23474,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               </components>
               <paths>
                 <path
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Conditional Split Default Output]"
+                  endId="Package\SEQ Load Data\DFT DimItem\DER Audit.Inputs[Derived Column Input]"
+                  name="Conditional Split Default Output"
+                  startId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Conditional Split Default Output]" />
+                <path
                   refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output]"
                   endId="Package\SEQ Load Data\DFT DimItem\Left Join.Inputs[Merge Join Left Input]"
                   name="Derived Column Output"
                   startId="Package\SEQ Load Data\DFT DimItem\DER Audit.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output3]"
+                  endId="Package\SEQ Load Data\DFT DimItem\ALL New and Type2.Inputs[Union All Input 2]"
+                  name="Derived Column Output"
+                  startId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output4]"
+                  endId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output1]"
                   endId="Package\SEQ Load Data\DFT DimItem\DST Insert.Inputs[OLE DB Destination Input]"
@@ -23003,11 +23503,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   endId="Package\SEQ Load Data\DFT DimItem\ALL New and Type2.Inputs[Union All Input 1]"
                   name="Derived Column Output"
                   startId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales FALSE.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output3]"
-                  endId="Package\SEQ Load Data\DFT DimItem\ALL New and Type2.Inputs[Union All Input 2]"
-                  name="Derived Column Output"
-                  startId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\SEQ Load Data\DFT DimItem.Paths[Merge Join Output]"
                   endId="Package\SEQ Load Data\DFT DimItem\CSPL SCD.Inputs[Conditional Split Input]"
@@ -23034,45 +23529,50 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="No Sales and Inferred"
                   startId="Package\SEQ Load Data\DFT DimItem\CSPL SCD.Outputs[No Sales and Inferred]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output1]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
                   endId="Package\SEQ Load Data\DFT DimItem\STAT Source.Inputs[Input 0]"
                   name="OLE DB Source Output"
                   startId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output1]"
                   endId="Package\SEQ Load Data\DFT DimItem\STAT DimItem.Inputs[Input 0]"
                   name="OLE DB Source Output"
                   startId="Package\SEQ Load Data\DFT DimItem\SRC DW.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 0]"
-                  endId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Inputs[Derived Column Input]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 05]"
+                  endId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Inputs[Conditional Split Input]"
                   name="Output 0"
-                  startId="Package\SEQ Load Data\DFT DimItem\STAT SCD-2.Outputs[Output 0]" />
+                  startId="Package\SEQ Load Data\DFT DimItem\STAT Source.Outputs[Output 0]" />
+                <path
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 04]"
+                  endId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales FALSE.Inputs[Derived Column Input]"
+                  name="Output 0"
+                  startId="Package\SEQ Load Data\DFT DimItem\STAT New.Outputs[Output 0]" />
+                <path
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 02]"
+                  endId="Package\SEQ Load Data\DFT DimItem\Left Join.Inputs[Merge Join Right Input]"
+                  name="Output 0"
+                  startId="Package\SEQ Load Data\DFT DimItem\STAT DimItem.Outputs[Output 0]" />
                 <path
                   refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 01]"
                   endId="Package\SEQ Load Data\DFT DimItem\DST SCD-1.Inputs[OLE DB Destination Input]"
                   name="Output 0"
                   startId="Package\SEQ Load Data\DFT DimItem\STAT SCD-1.Outputs[Output 0]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 02]"
-                  endId="Package\SEQ Load Data\DFT DimItem\DER Audit.Inputs[Derived Column Input]"
-                  name="Output 0"
-                  startId="Package\SEQ Load Data\DFT DimItem\STAT Source.Outputs[Output 0]" />
-                <path
                   refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 03]"
-                  endId="Package\SEQ Load Data\DFT DimItem\Left Join.Inputs[Merge Join Right Input]"
-                  name="Output 0"
-                  startId="Package\SEQ Load Data\DFT DimItem\STAT DimItem.Outputs[Output 0]" />
-                <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 04]"
                   endId="Package\SEQ Load Data\DFT DimItem\DST Inferred.Inputs[OLE DB Command Input]"
                   name="Output 0"
                   startId="Package\SEQ Load Data\DFT DimItem\STAT Inferred.Outputs[Output 0]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 05]"
-                  endId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales FALSE.Inputs[Derived Column Input]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 0]"
+                  endId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Inputs[Derived Column Input]"
                   name="Output 0"
-                  startId="Package\SEQ Load Data\DFT DimItem\STAT New.Outputs[Output 0]" />
+                  startId="Package\SEQ Load Data\DFT DimItem\STAT SCD-2.Outputs[Output 0]" />
+                <path
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Rejects]"
+                  endId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input]"
+                  name="Rejects"
+                  startId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Rejects]" />
                 <path
                   refId="Package\SEQ Load Data\DFT DimItem.Paths[Type 1 Update]"
                   endId="Package\SEQ Load Data\DFT DimItem\STAT SCD-1.Inputs[Input 0]"
@@ -24044,7 +24544,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output1]"
-          TopLeft="280.5,47.5">
+          TopLeft="80.5000000000001,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -24066,7 +24566,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
-          TopLeft="80.5000000000001,149.5">
+          TopLeft="280.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -24467,7 +24967,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 05]"
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 04]"
           TopLeft="280.5,659.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24501,7 +25001,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 04]"
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 03]"
           TopLeft="145.5,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24535,7 +25035,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 03]"
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 02]"
           TopLeft="80.5000000000001,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24568,20 +25068,126 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="157,42"
+          Id="Package\SEQ Load Data\DFT DimItem\Conditional Split"
+          TopLeft="411,157" />
         <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 02]"
-          TopLeft="280.5,149.5">
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 05]"
+          TopLeft="351,128.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,60"
+              EndConnector="60,49.5"
               Start="0,0"
-              End="0,52.5">
+              End="52.5,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="26,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26,0"
+                    Point2="30,0"
+                    Point3="30,4" />
+                  <mssgle:LineSegment
+                    End="30,45.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30,45.5"
+                    Point2="30,49.5"
+                    Point3="34,49.5" />
+                  <mssgle:LineSegment
+                    End="52.5,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Conditional Split Default Output]"
+          TopLeft="411,183.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-66.5,46.8333333333333"
+              Start="0,0"
+              End="-59,46.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-24.0642201834863,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.0642201834863,0"
+                    Point2="-28.0642201834863,0"
+                    Point3="-28.0642201834863,4" />
+                  <mssgle:LineSegment
+                    End="-28.0642201834863,42.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.0642201834863,42.8333333333333"
+                    Point2="-28.0642201834863,46.8333333333333"
+                    Point3="-32.0642201834863,46.8333333333333" />
+                  <mssgle:LineSegment
+                    End="-59,46.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-98.6781264334863,-17.658203125,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\SEQ Load Data\DFT DimItem\Derived Column"
+          TopLeft="624,157" />
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Rejects]"
+          TopLeft="568,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="56,0"
+              Start="0,0"
+              End="48.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="7.732421875,5,33.03515625,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\SEQ Load Data\DFT DimItem\OLE DB Destination"
+          TopLeft="831,159" />
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output4]"
+          TopLeft="780,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="51,0"
+              Start="0,0"
+              End="43.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24593,5 +25199,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Load Data\DFT DimItem\SRC DimItem">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Load Data\DFT DimItem\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

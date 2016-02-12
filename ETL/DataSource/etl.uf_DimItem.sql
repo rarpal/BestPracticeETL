@@ -1,4 +1,10 @@
 ﻿
+if object_id('[etl].[uf_DimItem]') is not null
+begin
+	DROP FUNCTION [etl].[uf_DimItem]
+end
+GO
+
 CREATE function [etl].[uf_DimItem](@logicalDate datetime)
 returns table
 -- select top 10 * from etl.uf_DimItem('2004-12-20')

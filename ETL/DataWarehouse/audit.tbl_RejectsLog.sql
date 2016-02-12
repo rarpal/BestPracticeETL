@@ -1,4 +1,4 @@
-﻿CREATE TABLE [audit].[ReduceLog]
+﻿CREATE TABLE [audit].[RejectsLog]
 (
 	[LogID] INT NOT NULL , 
     [TableName] VARCHAR(50) NOT NULL, 
