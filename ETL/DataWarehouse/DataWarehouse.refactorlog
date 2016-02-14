@@ -49,4 +49,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="[cix_RejectsLog]" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="08810bc6-0cca-4b12-8dc4-d20678a3917d" ChangeDateTime="02/14/2016 17:01:30">
+    <Property Name="ElementName" Value="[audit].[RejectsLog].[KeyValue]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[audit].[RejectsLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="KeyField" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8df69527-9979-4cb7-a836-2c5c922ee763" ChangeDateTime="02/14/2016 17:06:16">
+    <Property Name="ElementName" Value="[audit].[RejectsLog].[KeyField]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[audit].[RejectsLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="KeyValue" />
+  </Operation>
 </Operations>

@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Item"
   DTS:PackageType="5"
-  DTS:VersionBuild="1010"
-  DTS:VersionGUID="{EDA06336-CF3C-4B74-81EA-A0889F528A6E}">
+  DTS:VersionBuild="1011"
+  DTS:VersionGUID="{B2C6F1C1-67F1-4A96-910F-8E05D7A613B3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -100,7 +100,7 @@
       DTS:Namespace=""
       DTS:ObjectName="LogicalDate">
       <DTS:VariableValue
-        DTS:DataType="7">12/21/2004</DTS:VariableValue>
+        DTS:DataType="7">12/19/2004</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -16498,6 +16498,7 @@ using System.Data;
 using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
 using Microsoft.SqlServer.Dts.Runtime.Wrapper;
 using System.Data.OleDb;
+using ETLModel;
 #endregion
 
 /// <summary>
@@ -16804,7 +16805,7 @@ namespace SC_aa53ce12e0d64caf9a358dec5a324992.Properties {
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{db548e45-9f6a-4841-9f65-9e2a8b7b56e8}</ProjectGuid>
+    <ProjectGuid>{DB548E45-9F6A-4841-9F65-9E2A8B7B56E8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SC_aa53ce12e0d64caf9a358dec5a324992</RootNamespace>
@@ -16833,6 +16834,9 @@ namespace SC_aa53ce12e0d64caf9a358dec5a324992.Properties {
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ETLModel">
+      <HintPath>C:\Users\Ravi\PalProjects\RandD\BestPracticeETL\ETL\ETLModel\bin\Debug\ETLModel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
@@ -16873,8 +16877,8 @@ namespace SC_aa53ce12e0d64caf9a358dec5a324992.Properties {
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="ScriptComponent" GeneratedNamespace="SC_aa53ce12e0d64caf9a358dec5a324992" IconIndex="0"></Host>
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptComponent" IconIndex="0" />
         <ProjectClient>
           <HostIdentifier>SSIS_SC120</HostIdentifier>
         </ProjectClient>
@@ -16890,20 +16894,20 @@ namespace SC_aa53ce12e0d64caf9a358dec5a324992.Properties {
                           dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
-		<msb:CodeName>SC_aa53ce12e0d64caf9a358dec5a324992</msb:CodeName>
 		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>SC_aa53ce12e0d64caf9a358dec5a324992</msb:CodeName>
 		<msb:DisplayName>SC_aa53ce12e0d64caf9a358dec5a324992</msb:DisplayName>
 		<msb:ProjectId>{44CC1F02-A9DF-4A40-AF16-E3E45E2E5615}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="SC_aa53ce12e0d64caf9a358dec5a324992.csproj"/>
-		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="main.cs"/>
 		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="ComponentWrapper.cs"/>
 	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
@@ -17040,7 +17044,7 @@ namespace SC_aa53ce12e0d64caf9a358dec5a324992.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAOa/v1YAAAAAAAAAAOAAAiELAQsAACAAAAAIAAAAAAAAHj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAOO4wFYAAAAAAAAAAOAAAiELAQsAACAAAAAIAAAAAAAAHj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAMg9AABTAAAAAEAAAFAEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -17104,7 +17108,7 @@ AN4BLgAjAAcCLgArAA0CLgAzAN4BLgA7ABwCLgBDAAcCLgBbADwCYwCDAM8A4wDLAc8AYQHzAc8A
 A2MAAACQA2sAAACZA2MAAACpA2cAAAC2A2MAAADKA2cAAADeA2MAAAD5A3AAAAD8A2MAAACPBIMA
 AACqBF8AAADBBKAAAAA6BaUAAABeBbMAAgALAAMAAgAMAAUAAgANAAcAAgAOAAkAAgAPAAsAAgAQ
 AA0AAgARAA8AAgASABEAAgATABMAAgAUABUAAgAVABcAAgAWABkAAgAaABsAAgAcAB0AAgAeAB8A
-AgAfACEAAQAgACEAAgAhACMABIAAAAEAAAD/FvOmAAAAAAAAZAcAAAwAAAAAAAAAAAAAAAEAsAAA
+AgAfACEAAQAgACEAAgAhACMABIAAAAEAAAAAF7F6AAAAAAAAZAcAAAwAAAAAAAAAAAAAAAEAsAAA
 AAAABAAAAAAAAAAAAAAACgALAQAAAAAEAAAAAAAAAAAAAAAKABQBAAAAAAwAAAAAAAAAAAAAAAEA
 VQEAAAAABAAAAAAAAAAAAAAACgDLAQAAAAAMAAAAAAAAAAAAAAABABYEAAAAAAwAAAAAAAAAAAAA
 AAEAMQkAAAAAAAAAAAEAAACrCwAAAAAAPE1vZHVsZT4AU0NfYWE1M2NlMTJlMGQ2NGNhZjlhMzU4
@@ -17169,7 +17173,7 @@ AEUAUwBDADoAAB0sAEEAVQBEAEkARQBOAEMARQBDAE8ARABFADoAACssAEIATgBPAFIASQBHAEQA
 SQBTAEMATwBVAE4AVABTAEMASABFAEQAOgAAFSwAQgBOAFIARQBUAEEASQBMADoAACFTAFEATABS
 AEUAQQBMAFcAYQByAGUAaABvAHUAcwBlAAALTABvAGcASQBEAABxUwBDAF8AYQBhADUAMwBjAGUA
 MQAyAGUAMABkADYANABjAGEAZgA5AGEAMwA1ADgAZABlAGMANQBhADMAMgA0ADkAOQAyAC4AUABy
-AG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAADSVx7nVcYdQboHuEYwT71J
+AG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAACthhfICjMqRKp/GDfs/l3h
 AAiJhF3NgIDMkQi3elxWGTTgiQMGEhQDBhIYAyAAAQkgBAEIDhIVEhkFIAEBEhADBhIdAwYSIQgg
 BAEOCA4RJQkgAwESFR0IEhkDIAAIAyAAAgMgAA4EIAARKQMgAAoDKAAIAygAAgMoAA4EKAARKQMo
 AAoDBhIFBSABARIFBCAAEi0EKAASLQMGEjEDBhI1BAAAEjEEAAASNQUAAQESNQQIABIxBAgAEjUD
@@ -17193,13 +17197,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQ
 AAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhA
 AAD4AwAAAAAAAAAAAAD4AzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv
-/gAAAQAAAAEA86b/FgAAAQDzpv8WPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYA
+/gAAAQAAAAEAsXoAFwAAAQCxegAXPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYA
 YQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAA
 ALAEWAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAANAMAAAEAMAAwADAAMAAwADQA
 YgAwAAAANAAKAAEAQwBvAG0AcABhAG4AeQBOAGEAbQBlAAAAAABNAGkAYwByAG8AcwBvAGYAdAAA
 AHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAEMAXwBhAGEANQAzAGMA
 ZQAxADIAZQAwAGQANgA0AGMAYQBmADkAYQAzADUAOABkAGUAYwA1AGEAMwAyADQAOQA5ADIAAABA
-AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANQA4ADgANwAuADQAMgA3ADMA
+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANQA4ADgAOAAuADMAMQA0ADAA
 OQAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwBhAGEANQAzAGMAZQAx
 ADIAZQAwAGQANgA0AGMAYQBmADkAYQAzADUAOABkAGUAYwA1AGEAMwAyADQAOQA5ADIALgBkAGwA
 bAAAAFwAGwABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0
@@ -17208,8 +17212,8 @@ YQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfAGEAYQA1ADMAYwBlADEAMgBlADAAZAA2ADQAYwBh
 AGYAOQBhADMANQA4AGQAZQBjADUAYQAzADIANAA5ADkAMgAuAGQAbABsAAAAaAAkAAEAUAByAG8A
 ZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwBhAGEANQAzAGMAZQAxADIAZQAwAGQANgA0AGMAYQBm
 ADkAYQAzADUAOABkAGUAYwA1AGEAMwAyADQAOQA5ADIAAABEAA8AAQBQAHIAbwBkAHUAYwB0AFYA
-ZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAOAA4ADcALgA0ADIANwAzADkAAAAAAEgADwABAEEAcwBz
-AGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAOAA4ADcALgA0ADIANwAzADkA
+ZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAOAA4ADgALgAzADEANAAwADkAAAAAAEgADwABAEEAcwBz
+AGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAOAA4ADgALgAzADEANAAwADkA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -24225,14 +24229,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   startId="Package\SEQ Load Data\DFT DimItem\CSPL SCD.Outputs[No Sales and Inferred]" />
                 <path
                   refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output1]"
-                  endId="Package\SEQ Load Data\DFT DimItem\STAT Source.Inputs[Input 0]"
-                  name="OLE DB Source Output"
-                  startId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
                   endId="Package\SEQ Load Data\DFT DimItem\STAT DimItem.Inputs[Input 0]"
                   name="OLE DB Source Output"
                   startId="Package\SEQ Load Data\DFT DimItem\SRC DW.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
+                  endId="Package\SEQ Load Data\DFT DimItem\STAT Source.Inputs[Input 0]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 0]"
                   endId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Inputs[Conditional Split Input]"
@@ -24643,7 +24647,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="253,44"
           Id="Package\SEQ Land Business Keys\DFT KeyLog"
@@ -24657,12 +24661,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -24725,12 +24729,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -24743,12 +24747,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -24761,12 +24765,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -24779,12 +24783,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -24797,12 +24801,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -24815,12 +24819,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -24865,7 +24869,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="114.5,153.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="238,60"
               Start="0,0"
               End="238,52.5">
@@ -24899,7 +24903,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="352.5,49.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-238,60"
               Start="0,0"
               End="-238,52.5">
@@ -24935,7 +24939,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="352.5,580.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,-251.5"
               Start="0,0"
               End="0,-244">
@@ -25310,7 +25314,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output1]"
-          TopLeft="280.5,47.5">
+          TopLeft="80.5000000000001,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -25332,7 +25336,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
-          TopLeft="80.5000000000001,149.5">
+          TopLeft="280.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
