@@ -64,6 +64,32 @@
     <Build Include="audit.tbl_RejectsLog.sql" />
     <Build Include="audit.sql" />
     <Build Include="audit.up_CreateRjectsLog.sql" />
+    <Build Include="audit.up_ClearLogs.sql" />
+    <Build Include="admin.Configuration.sql" />
+    <Build Include="audit.CommandLog.sql" />
+    <Build Include="audit.ExecutionLog.sql" />
+    <Build Include="audit.ProcessLog.sql" />
+    <Build Include="audit.StatisticLog.sql" />
+    <Build Include="admin.up_SetLogicalDate.sql" />
+    <Build Include="audit.up_Event_Package_OnError.sql" />
+    <Build Include="audit.up_Event_Package_OnBegin.sql" />
+    <Build Include="audit.up_Event_Package_OnCommand.sql" />
+    <Build Include="audit.up_Event_Package_OnCount.sql" />
+    <Build Include="audit.up_Event_Package_OnEnd.sql" />
+    <Build Include="util.up_ExecuteSQL.sql" />
+    <Build Include="util.up_SetDefaultFilegroup.sql" />
+    <Build Include="audit.uf_GetExecutionLogTree.sql" />
+    <Build Include="audit.uf_Progress.sql" />
+    <Build Include="audit.uf_GetExecutionLogRoot.sql" />
+    <Build Include="util.uf_FormatDate.sql" />
+    <Build Include="util.uf_GetCanonicalName.sql" />
+    <Build Include="util.uf_GetDaysToEndOfWeek.sql" />
+    <Build Include="util.uf_GetEndOfWeekDate.sql" />
+    <Build Include="util.uf_GetTableExists.sql" />
+    <Build Include="util.uf_GetViewExists.sql" />
+    <Build Include="util.uf_QuoteName.sql" />
+    <Build Include="admin.sql" />
+    <Build Include="util.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="etl.sql" />
