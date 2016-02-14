@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Item"
   DTS:PackageType="5"
-  DTS:VersionBuild="994"
-  DTS:VersionGUID="{02E63D50-EA91-41D3-819E-66D384A15DEF}">
+  DTS:VersionBuild="1010"
+  DTS:VersionGUID="{EDA06336-CF3C-4B74-81EA-A0889F528A6E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,7 +24,7 @@
       DTS:ObjectName="SQL_REAL_Configuration">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=(local);Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
+          DTS:ConnectionString="Data Source=paldesk;Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -34,7 +34,7 @@
       DTS:ObjectName="SQL_REAL_Source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=(local);Initial Catalog=REAL_Source_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
+          DTS:ConnectionString="Data Source=paldesk;Initial Catalog=REAL_Source_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -44,7 +44,7 @@
       DTS:ObjectName="SQL_REAL_Warehouse">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=(local);Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
+          DTS:ConnectionString="Data Source=paldesk;Initial Catalog=REAL_Warehouse_Sample_V6;Provider=SQLNCLI11;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -100,7 +100,7 @@
       DTS:Namespace=""
       DTS:ObjectName="LogicalDate">
       <DTS:VariableValue
-        DTS:DataType="7">12/19/2004</DTS:VariableValue>
+        DTS:DataType="7">12/21/2004</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -6629,209 +6629,6 @@
                           refId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\SEQ Load Data\DFT DimItem\Derived Column"
-                  componentClassID="Microsoft.DerivedColumn"
-                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="Derived Column"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input]"
-                      description="Input to the Derived Column Transformation"
-                      name="Derived Column Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[SYSID]"
-                          cachedDataType="i4"
-                          cachedName="SYSID"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[SYSID]" />
-                        <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[ASSORTMENT_DESC]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="100"
-                          cachedName="ASSORTMENT_DESC"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[ASSORTMENT_DESC]" />
-                        <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[AUDIENCE_CODE]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="3"
-                          cachedName="AUDIENCE_CODE"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[AUDIENCE_CODE]" />
-                        <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[BN_ORIG_DISCOUNT_SCHED]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="2"
-                          cachedName="BN_ORIG_DISCOUNT_SCHED"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_ORIG_DISCOUNT_SCHED]" />
-                        <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input].Columns[BN_RETAIL]"
-                          cachedDataType="numeric"
-                          cachedName="BN_RETAIL"
-                          cachedPrecision="9"
-                          cachedScale="2"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_RETAIL]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output]"
-                      description="Default Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      name="Derived Column Output"
-                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[ComponentName]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          length="50"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[ComponentName]"
-                          name="ComponentName"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_STR,50,1252)"DimItem"</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,50,1252)"DimItem"</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[KeyValue]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          length="50"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[KeyValue]"
-                          name="KeyValue"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_STR,50,1252)((DT_STR,50,1252)"SYSID:" + (DT_STR,50,1252)#{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[SYSID]})</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,50,1252)((DT_STR,50,1252)"SYSID:" + (DT_STR,50,1252)SYSID)</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[Rejects]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          length="50"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[Rejects]"
-                          name="Rejects"
-                          truncationRowDisposition="IgnoreFailure">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_STR,50,1252)("ASSORTMENT_DESC:" + #{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[ASSORTMENT_DESC]} + ",AUDIENCE_CODE:" + #{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[AUDIENCE_CODE]} + ",BN_ORIG_DISCOUNT_SCHED:" + #{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_ORIG_DISCOUNT_SCHED]} + ",BN_RETAIL" + (DT_STR,50,1252)#{Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_RETAIL]})</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,50,1252)("ASSORTMENT_DESC:" + ASSORTMENT_DESC + ",AUDIENCE_CODE:" + AUDIENCE_CODE + ",BN_ORIG_DISCOUNT_SCHED:" + BN_ORIG_DISCOUNT_SCHED + ",BN_RETAIL" + (DT_STR,50,1252)BN_RETAIL)</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogTime]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogTime]"
-                          name="LogTime"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">[GETDATE]()</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">GETDATE()</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogID]"
-                          name="LogID"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">@[LogID]</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">@LogID</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output]"
-                      description="Error Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Derived Column Error Output"
-                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -14292,9 +14089,8 @@ FROM dbo.tbl_Dim_Item</property>
                           lineageId="Package\SEQ Load Data\DFT DimItem\DER Audit.Outputs[Derived Column Output].Columns[Last_Modified_Date]" />
                         <inputColumn
                           refId="Package\SEQ Load Data\DFT DimItem\Left Join.Inputs[Merge Join Left Input].Columns[Modified_By_User]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
+                          cachedDataType="wstr"
+                          cachedLength="13"
                           cachedName="Modified_By_User"
                           lineageId="Package\SEQ Load Data\DFT DimItem\DER Audit.Outputs[Derived Column Output].Columns[Modified_By_User]" />
                       </inputColumns>
@@ -16458,176 +16254,1080 @@ FROM dbo.tbl_Dim_Item</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination"
-                  componentClassID="Microsoft.OLEDBDestination"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                  description="OLE DB Destination"
-                  name="OLE DB Destination"
-                  usesDispositions="true"
-                  version="4">
+                  refId="Package\SEQ Load Data\DFT DimItem\Script Component"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;9"
+                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                  name="Script Component"
+                  version="9">
                   <properties>
                     <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="30">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+    public IDTSConnectionManager100 SQLREALWarehouse
+    {
+        get
+        {
+            return ParentComponent.ComponentMetaData.RuntimeConnectionCollection.GetRuntimeConnectionByName(@"SQLREALWarehouse").ConnectionManager;
+        }
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+    public Int32 LogID
+    {
+        get
+        {
+            return (Int32)(ParentComponent.ReadOnlyVariables["LogID"].GetValueWithContext(ScriptComponent.EvaluatorContext));
+        }
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+using System.Data.OleDb;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    OleDbCommand objCommand = new OleDbCommand();
+    OleDbParameter prmKeyValue, prmRowNumber, prmRejects;
+    
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+        objCommand.CommandText = "audit.up_CreateRejectsLog";
+        objCommand.CommandType = CommandType.StoredProcedure;
+        objCommand.Connection = new OleDbConnection(Connections.SQLREALWarehouse.ConnectionString);
+        objCommand.Parameters.Add("@LogID", OleDbType.Integer).Value = Variables.LogID;
+        objCommand.Parameters.Add("@ComponentName", OleDbType.VarChar, 50).Value = "Dim_Item";
+        prmKeyValue = objCommand.Parameters.Add("@KeyValue", OleDbType.VarChar, 50);
+        prmRowNumber = objCommand.Parameters.Add("@RowNumber", OleDbType.BigInt);
+        prmRejects = objCommand.Parameters.Add("@Rejects", OleDbType.VarChar, 1000);
+        objCommand.Connection.Open();
+        objCommand.Prepare();
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+        objCommand.Connection.Close();
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        /*
+         * Add your code here
+         */
+        prmKeyValue.Value = "SYSID:" + Row.SYSID.ToString();
+        prmRowNumber.Value = Row.rn;
+        prmRejects.Value = "ASSORTMENTDESC:" + Row.ASSORTMENTDESC + ",AUDIENCECODE:" + Row.AUDIENCECODE + ",BNORIGDISCOUNTSCHED:" + Row.BNORIGDISCOUNTSCHED + ",BNRETAIL:" + Row.BNRETAIL.ToString();
+
+        objCommand.ExecuteNonQuery();
+    }
+
+    private void ExecuteSP(string keyvalue, int rowNumber, string rejects, DateTime logTime)
+    {
+
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public Int32 SYSID
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[0]);
+        }
+    }
+    public bool SYSID_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String ASSORTMENTDESC
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[1]);
+        }
+    }
+    public bool ASSORTMENTDESC_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public Decimal BNRETAIL
+    {
+        get
+        {
+            return Buffer.GetDecimal(BufferColumnIndexes[2]);
+        }
+    }
+    public bool BNRETAIL_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+    }
+
+    public String AUDIENCECODE
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[3]);
+        }
+    }
+    public bool AUDIENCECODE_IsNull
+    {
+        get
+        {
+            return IsNull(3);
+        }
+    }
+
+    public String BNORIGDISCOUNTSCHED
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[4]);
+        }
+    }
+    public bool BNORIGDISCOUNTSCHED_IsNull
+    {
+        get
+        {
+            return IsNull(4);
+        }
+    }
+
+    public Int64 rn
+    {
+        get
+        {
+            return Buffer.GetInt64(BufferColumnIndexes[5]);
+        }
+    }
+    public bool rn_IsNull
+    {
+        get
+        {
+            return IsNull(5);
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_aa53ce12e0d64caf9a358dec5a324992.Properties.Settings.get_Default():SC_aa53ce12e0d64caf9a358dec5a324992.Properties.Sett" +
+    "ings")]
+
+namespace SC_aa53ce12e0d64caf9a358dec5a324992.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_aa53ce12e0d64caf9a358dec5a324992.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{db548e45-9f6a-4841-9f65-9e2a8b7b56e8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_aa53ce12e0d64caf9a358dec5a324992</RootNamespace>
+    <AssemblyName>SC_aa53ce12e0d64caf9a358dec5a324992</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_aa53ce12e0d64caf9a358dec5a324992" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC120</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_aa53ce12e0d64caf9a358dec5a324992</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_aa53ce12e0d64caf9a358dec5a324992</msb:DisplayName>
+		<msb:ProjectId>{44CC1F02-A9DF-4A40-AF16-E3E45E2E5615}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_aa53ce12e0d64caf9a358dec5a324992.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_aa53ce12e0d64caf9a358dec5a324992")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("SC_aa53ce12e0d64caf9a358dec5a324992")]
+[assembly: AssemblyCopyright("Copyright @ Microsoft 2016")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_aa53ce12e0d64caf9a358dec5a324992.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_aa53ce12e0d64caf9a358dec5a324992.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_aa53ce12e0d64caf9a358dec5a324992.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_aa53ce12e0d64caf9a358dec5a324992.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_aa53ce12e0d64caf9a358dec5a324992.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
                     <property
                       dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[audit].[RejectsLog]</property>
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="2">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_aa53ce12e0d64caf9a358dec5a324992.dll]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAOa/v1YAAAAAAAAAAOAAAiELAQsAACAAAAAIAAAAAAAAHj4A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAMg9AABTAAAAAEAAAFAEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAJB4AAAAgAAAAIAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAFAEAAAAQAAAAAYAAAAiAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAKAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAA
+PgAAAAAAAEgAAAACAAUACCUAAMAYAAABAAAAAAAAAFAkAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4CKA0AAAoCAnMZAAAGfQEAAAQCAnMbAAAGfQIAAAQqkgRy
+AQAAcBpvDgAACiwVAgUCAygPAAAKDgRzCgAABm8DAAAGKkorBwIDbwQAAAYDbxcAAAYt8SoGKgAA
+AzAFABMBAAAAAAAAAigRAAAKAnsDAAAEchEAAHBvEgAACgJ7AwAABBpvEwAACgJ7AwAABAJ7AQAA
+BG8aAAAGbxQAAApzFQAACm8WAAAKAnsDAAAEbxcAAApyRQAAcBlvGAAACgJ7AgAABG8cAAAGjCIA
+AAFvGQAACgJ7AwAABG8XAAAKclMAAHAgyAAAAB8ybxoAAApycQAAcG8ZAAAKAgJ7AwAABG8XAAAK
+coMAAHAgyAAAAB8ybxoAAAp9BAAABAICewMAAARvFwAACnKXAABwHxRvGAAACn0FAAAEAgJ7AwAA
+BG8XAAAKcq0AAHAgyAAAACDoAwAAbxoAAAp9BgAABAJ7AwAABG8bAAAKbxwAAAoCewMAAARvHQAA
+CipeAigeAAAKAnsDAAAEbxsAAApvHwAACioAEzAEAKoAAAABAAARAnsEAAAEcr8AAHADbwsAAAYK
+EgAoIAAACighAAAKbxkAAAoCewUAAAQDbxUAAAaMJQAAAW8ZAAAKAnsGAAAEHo0aAAABCwcWcs0A
+AHCiBxcDbw0AAAaiBxhy7QAAcKIHGQNvEQAABqIHGnILAQBwogcbA28TAAAGogcccjcBAHCiBx0D
+bw8AAAYMEgIoIgAACqIHKCMAAApvGQAACgJ7AwAABG8kAAAKJioGKkoCcyUAAAp9AwAABAIoAQAA
+BioqAgMEBSgmAAAKKlICeycAAAoCeygAAAoWlG8pAAAKKiICFigqAAAKKlICeycAAAoCeygAAAoX
+lG8rAAAKKiICFygqAAAKKlICeycAAAoCeygAAAoYlG8sAAAKKiICGCgqAAAKKlICeycAAAoCeygA
+AAoZlG8rAAAKKiICGSgqAAAKKlICeycAAAoCeygAAAoalG8rAAAKKiICGigqAAAKKlICeycAAAoC
+eygAAAoblG8tAAAKKiICGygqAAAKKh4CKC4AAAoqHgIoLwAACio6AigwAAAKAgN9BwAABCqCAnsH
+AAAEbzEAAApvMgAACnJNAQBwbzMAAApvNAAACio6AigwAAAKAgN9CAAABCqWAnsIAAAEbzUAAApy
+bwEAcG82AAAKKDcAAApvOAAACqUiAAABKh4CKDAAAAoqABMwAgAtAAAAAgAAEX4JAAAELSByewEA
+cNAHAAACKDoAAApvOwAACnM8AAAKCgaACQAABH4JAAAEKhp+CgAABCoeAoAKAAAEKhp+CwAABCou
+cyIAAAaACwAABCoeAig/AAAKKgC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVz
+b3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwg
+UHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVS
+ZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAz
+MTkAAAAABQBsAAAAAAgAACN+AABsCAAA8AsAACNTdHJpbmdzAAAAAFwUAADwAQAAI1VTAEwWAAAQ
+AAAAI0dVSUQAAABcFgAAZAIAACNCbG9iAAAAAAAAAAIAAAFXFaIBCQEAAAD6JTMAFgAAAQAAADMA
+AAAIAAAACwAAACMAAAARAAAAPwAAAA8AAAACAAAABQAAABEAAAASAAAAAQAAAAcAAAABAAAAAAAK
+AAEAAAAAAAYA7gDNAAYA/gDNAAoAGwEUAQ4ANwEiARIAdgHNAAYAhQHNABYA6QHXARYAAQLXAQoA
+SwIUAQoApgIUARoAYQQ5BAoAwQSwBAoA8gTdBAoA7gXUBQoAGQYHBgoAMAYHBgoATQYHBgoAbAYH
+BgoAhQYHBgoAngYHBgoAuQYHBgoA1AYHBgoA7QYHBgoAJgcGBwoARgcGBwoAiAcUAQoAjwcUAQYA
+uAfNABYA8gffBxYADAjLARYAPQjXARYAXAjXARYAhAjXAQoAkggUARYAmAjfBxYAvQjfBwoA7QgU
+AR4AfglVCR4ArQlVCR4A8AlVCRoAOgo5BBoAYQo5BAcAegoAABoAqgo5BAoA6QrWCgoABgsUAQoA
+CwsUAQoALwsHBg4AWwtFCw4AdAtFCwoAiQsGBwAAAAABAAAAAAABAAEAAQAQADIAAAAFAAEAAQAB
+ABAAQAAAAAgAAwAFAAEAEABLAAAACQAHAAoAAQAQAFgAAAANAAcAGQABABAAZAAAAA0ACAAbAAAA
+EABuAHgADQAJAB0AAAEQAKcAeAARAAsAIQAGAFgAEwAGAGQAFwABAPYBLwABABACMwABABwCMwAB
+ACkCMwABAAYEdAABAAYEdAARANEEiAARAP4EjAARAEIFqgBQIAAAAACGGE8BGwABAHAgAAAAAMYA
+kwEfAAEAlSAAAAAAxgGgASkABQCoIAAAAADGAbQBKQAGAKwgAAAAAMYANAIbAAcAyyEAAAAAxgA/
+AhsABwDkIQAAAADGALQBKQAHAJoiAAAAAIEAVAI3AAgAnCIAAAAAhhhPARsADACvIgAAAACGGE8B
+QAAMALoiAAAAAIYIXgJKAA8AzyIAAAAAhghoAk4ADwDYIgAAAACGCHkCUgAPAO0iAAAAAIYIjAJO
+AA8A9iIAAAAAhgiuAlYADwALIwAAAACGCLsCTgAPABQjAAAAAIYIzwJSAA8AKSMAAAAAhgjgAk4A
+DwAyIwAAAACGCPgCUgAPAEcjAAAAAIYIEANOAA8AUCMAAAAAhggvA1sADwBlIwAAAACGCDYDTgAP
+AG4jAAAAAIYARANOAA8AdiMAAAAAhgBMA04ADwB+IwAAAACGGE8BeAAPAI0jAAAAAIYIegR+ABAA
+riMAAAAAhhhPAXgAEAC9IwAAAACGCKAESgARAOMjAAAAAIMYTwEbABEA7CMAAAAAkwgOBZAAEQAl
+JAAAAACTCCIFlQARACwkAAAAAJMILgWaABEANCQAAAAAlghSBa4AEgBHJAAAAACGGE8BGwASADsk
+AAAAAJEYpAuSARIAAAABAGYFAAACAG4FAAADAHgFAAAEAH8FAAABAHgFAAABAIkFAAABAIkFAAAB
+AI0FAAACAJYFAAADAKAFAAAEAKgFAAABAHgFAAACALAFAAADAH8FAAABAMQFAAABAMQFAAABAM4F
+cQBPAbgAeQBPAbgAgQBPAbgAiQBPAbgAkQBPAbgAmQBPAbgAoQBPAbgAqQBPAbgAsQBPAbgAuQBP
+AbgAwQBPAb0AyQBPARsACQBPARsA0QCgB8IACQCnB8kA4QBPARsACQA0AhsA6QD8B7gA6QAYCNQA
+WQAoCFIA+QBPAbgAOQBNCNoAOQB1COAAAQGOCOYAGQGkCO8AAQGOCPQAOQCuCP4AIQHKCBsA6QDP
+CBsACQA/AhsAIQHXCBsAEQHdCFIA0QDmCAMBUQDdCFIA0QDmCAkB6QDzCEoAOQBPARsAEQBPAUAA
+EQB4BRcBEQCwBRsBKQADCR8BEQAMCSQBKQATCSkBKQAdCS4BKQAoCTQBEQBEA04AEQBMA04AGQBP
+ARsACQCXCTkBMQHQCT8BOQEJCkUBQQEkCn4ACQBLCkwBSQFxClIBCQCVClkBUQHCCl8BaQFPARsA
+cQEdC2YBcQE4C28BYQBPAXUBiQFPAYIBmQFPARsAIQBPARsALgAbAAcCLgBjAEUCLgALAJYBLgAT
+AN4BLgAjAAcCLgArAA0CLgAzAN4BLgA7ABwCLgBDAAcCLgBbADwCYwCDAM8A4wDLAc8AYQHzAc8A
+6QHrAYkBCQLrAYkBDwF9AQQAAQAFAA0ABgAOAAcADwAIABEAAABYA18AAABeA2MAAABrA2cAAAB6
+A2MAAACQA2sAAACZA2MAAACpA2cAAAC2A2MAAADKA2cAAADeA2MAAAD5A3AAAAD8A2MAAACPBIMA
+AACqBF8AAADBBKAAAAA6BaUAAABeBbMAAgALAAMAAgAMAAUAAgANAAcAAgAOAAkAAgAPAAsAAgAQ
+AA0AAgARAA8AAgASABEAAgATABMAAgAUABUAAgAVABcAAgAWABkAAgAaABsAAgAcAB0AAgAeAB8A
+AgAfACEAAQAgACEAAgAhACMABIAAAAEAAAD/FvOmAAAAAAAAZAcAAAwAAAAAAAAAAAAAAAEAsAAA
+AAAABAAAAAAAAAAAAAAACgALAQAAAAAEAAAAAAAAAAAAAAAKABQBAAAAAAwAAAAAAAAAAAAAAAEA
+VQEAAAAABAAAAAAAAAAAAAAACgDLAQAAAAAMAAAAAAAAAAAAAAABABYEAAAAAAwAAAAAAAAAAAAA
+AAEAMQkAAAAAAAAAAAEAAACrCwAAAAAAPE1vZHVsZT4AU0NfYWE1M2NlMTJlMGQ2NGNhZjlhMzU4
+ZGVjNWEzMjQ5OTIuZGxsAFVzZXJDb21wb25lbnQAU2NyaXB0TWFpbgBJbnB1dDBCdWZmZXIAQ29u
+bmVjdGlvbnMAVmFyaWFibGVzAFJlc291cmNlcwBTQ19hYTUzY2UxMmUwZDY0Y2FmOWEzNThkZWM1
+YTMyNDk5Mi5Qcm9wZXJ0aWVzAFNldHRpbmdzAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQA
+TWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUAU2NyaXB0Q29tcG9uZW50AFNjcmlwdEJ1
+ZmZlcgBtc2NvcmxpYgBTeXN0ZW0AT2JqZWN0AFN5c3RlbS5Db25maWd1cmF0aW9uAEFwcGxpY2F0
+aW9uU2V0dGluZ3NCYXNlAC5jdG9yAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuUGlwZWxpbmVIb3N0AFBp
+cGVsaW5lQnVmZmVyAE91dHB1dE5hbWVNYXAAUHJvY2Vzc0lucHV0AElucHV0MF9Qcm9jZXNzSW5w
+dXQASW5wdXQwX1Byb2Nlc3NJbnB1dFJvdwBTeXN0ZW0uRGF0YQBTeXN0ZW0uRGF0YS5PbGVEYgBP
+bGVEYkNvbW1hbmQAb2JqQ29tbWFuZABPbGVEYlBhcmFtZXRlcgBwcm1LZXlWYWx1ZQBwcm1Sb3dO
+dW1iZXIAcHJtUmVqZWN0cwBQcmVFeGVjdXRlAFBvc3RFeGVjdXRlAERhdGVUaW1lAEV4ZWN1dGVT
+UABnZXRfU1lTSUQAZ2V0X1NZU0lEX0lzTnVsbABnZXRfQVNTT1JUTUVOVERFU0MAZ2V0X0FTU09S
+VE1FTlRERVNDX0lzTnVsbABEZWNpbWFsAGdldF9CTlJFVEFJTABnZXRfQk5SRVRBSUxfSXNOdWxs
+AGdldF9BVURJRU5DRUNPREUAZ2V0X0FVRElFTkNFQ09ERV9Jc051bGwAZ2V0X0JOT1JJR0RJU0NP
+VU5UU0NIRUQAZ2V0X0JOT1JJR0RJU0NPVU5UU0NIRURfSXNOdWxsAGdldF9ybgBnZXRfcm5fSXNO
+dWxsAE5leHRSb3cARW5kT2ZSb3dzZXQAU1lTSUQAU1lTSURfSXNOdWxsAEFTU09SVE1FTlRERVND
+AEFTU09SVE1FTlRERVNDX0lzTnVsbABCTlJFVEFJTABCTlJFVEFJTF9Jc051bGwAQVVESUVOQ0VD
+T0RFAEFVRElFTkNFQ09ERV9Jc051bGwAQk5PUklHRElTQ09VTlRTQ0hFRABCTk9SSUdESVNDT1VO
+VFNDSEVEX0lzTnVsbABybgBybl9Jc051bGwAUGFyZW50Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxT
+ZXJ2ZXIuRFRTUnVudGltZVdyYXAATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUnVudGltZS5XcmFw
+cGVyAElEVFNDb25uZWN0aW9uTWFuYWdlcjEwMABnZXRfU1FMUkVBTFdhcmVob3VzZQBTUUxSRUFM
+V2FyZWhvdXNlAGdldF9Mb2dJRABMb2dJRABTeXN0ZW0uUmVzb3VyY2VzAFJlc291cmNlTWFuYWdl
+cgByZXNvdXJjZU1hbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBDdWx0dXJlSW5mbwByZXNvdXJjZUN1
+bHR1cmUAZ2V0X1Jlc291cmNlTWFuYWdlcgBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQBDdWx0dXJl
+AGRlZmF1bHRJbnN0YW5jZQBnZXRfRGVmYXVsdABEZWZhdWx0AElucHV0SUQASW5wdXROYW1lAEJ1
+ZmZlcgBPdXRwdXRNYXAAUm93AGtleXZhbHVlAHJvd051bWJlcgByZWplY3RzAGxvZ1RpbWUAQnVm
+ZmVyQ29sdW1uSW5kZXhlcwBDb21wb25lbnQAdmFsdWUAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmlu
+ZwBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAU3lzdGVtLlJlZmxlY3Rpb24AQXNzZW1ibHlUaXRs
+ZUF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJh
+dGlvbkF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0
+cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmli
+dXRlAEFzc2VtYmx5Q3VsdHVyZUF0dHJpYnV0ZQBBc3NlbWJseVZlcnNpb25BdHRyaWJ1dGUAU3lz
+dGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmli
+dXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAFNDX2FhNTNjZTEyZTBkNjRjYWY5YTM1
+OGRlYzVhMzI0OTkyAFN0cmluZwBTdHJpbmdDb21wYXJpc29uAEVxdWFscwBHZXRDb2x1bW5JbmRl
+eGVzAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAFN5c3RlbS5EYXRhLkNv
+bW1vbgBEYkNvbW1hbmQAc2V0X0NvbW1hbmRUZXh0AENvbW1hbmRUeXBlAHNldF9Db21tYW5kVHlw
+ZQBnZXRfQ29ubmVjdGlvblN0cmluZwBPbGVEYkNvbm5lY3Rpb24Ac2V0X0Nvbm5lY3Rpb24AT2xl
+RGJQYXJhbWV0ZXJDb2xsZWN0aW9uAGdldF9QYXJhbWV0ZXJzAE9sZURiVHlwZQBBZGQASW50MzIA
+RGJQYXJhbWV0ZXIAc2V0X1ZhbHVlAGdldF9Db25uZWN0aW9uAERiQ29ubmVjdGlvbgBPcGVuAFBy
+ZXBhcmUAQ2xvc2UAVG9TdHJpbmcAQ29uY2F0AEludDY0AEV4ZWN1dGVOb25RdWVyeQBHZXRJbnQz
+MgBJc051bGwAR2V0U3RyaW5nAEdldERlY2ltYWwAR2V0SW50NjQATWljcm9zb2Z0LlNxbFNlcnZl
+ci5EVFNQaXBlbGluZVdyYXAATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUuV3JhcHBl
+cgBJRFRTQ29tcG9uZW50TWV0YURhdGExMDAAZ2V0X0NvbXBvbmVudE1ldGFEYXRhAElEVFNSdW50
+aW1lQ29ubmVjdGlvbkNvbGxlY3Rpb24xMDAAZ2V0X1J1bnRpbWVDb25uZWN0aW9uQ29sbGVjdGlv
+bgBJRFRTUnVudGltZUNvbm5lY3Rpb24xMDAAR2V0UnVudGltZUNvbm5lY3Rpb25CeU5hbWUAZ2V0
+X0Nvbm5lY3Rpb25NYW5hZ2VyAElEVFNWYXJpYWJsZXMxMDAAZ2V0X1JlYWRPbmx5VmFyaWFibGVz
+AElEVFNWYXJpYWJsZTEwMABnZXRfSXRlbQBTY3JpcHRDb21wb25lbnRFdmFsQ29udGV4dABnZXRf
+RXZhbHVhdG9yQ29udGV4dABJRFRTRXZhbHVhdG9yQ29udGV4dDEwMABHZXRWYWx1ZVdpdGhDb250
+ZXh0AFN5c3RlbS5EaWFnbm9zdGljcwBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAFR5cGUA
+UnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUAQXNzZW1ibHkAZ2V0X0Fzc2VtYmx5
+AFN5c3RlbS5Db21wb25lbnRNb2RlbABFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUARWRpdG9yQnJv
+d3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUALmNjdG9yAFNDX2FhNTNjZTEy
+ZTBkNjRjYWY5YTM1OGRlYzVhMzI0OTkyLlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwAA
+AAAPSQBuAHAAdQB0ACAAMAAAM2EAdQBkAGkAdAAuAHUAcABfAEMAcgBlAGEAdABlAFIAZQBqAGUA
+YwB0AHMATABvAGcAAA1AAEwAbwBnAEkARAAAHUAAQwBvAG0AcABvAG4AZQBuAHQATgBhAG0AZQAA
+EUQAaQBtAF8ASQB0AGUAbQAAE0AASwBlAHkAVgBhAGwAdQBlAAAVQABSAG8AdwBOAHUAbQBiAGUA
+cgAAEUAAUgBlAGoAZQBjAHQAcwAADVMAWQBTAEkARAA6AAAfQQBTAFMATwBSAFQATQBFAE4AVABE
+AEUAUwBDADoAAB0sAEEAVQBEAEkARQBOAEMARQBDAE8ARABFADoAACssAEIATgBPAFIASQBHAEQA
+SQBTAEMATwBVAE4AVABTAEMASABFAEQAOgAAFSwAQgBOAFIARQBUAEEASQBMADoAACFTAFEATABS
+AEUAQQBMAFcAYQByAGUAaABvAHUAcwBlAAALTABvAGcASQBEAABxUwBDAF8AYQBhADUAMwBjAGUA
+MQAyAGUAMABkADYANABjAGEAZgA5AGEAMwA1ADgAZABlAGMANQBhADMAMgA0ADkAOQAyAC4AUABy
+AG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAADSVx7nVcYdQboHuEYwT71J
+AAiJhF3NgIDMkQi3elxWGTTgiQMGEhQDBhIYAyAAAQkgBAEIDhIVEhkFIAEBEhADBhIdAwYSIQgg
+BAEOCA4RJQkgAwESFR0IEhkDIAAIAyAAAgMgAA4EIAARKQMgAAoDKAAIAygAAgMoAA4EKAARKQMo
+AAoDBhIFBSABARIFBCAAEi0EKAASLQMGEjEDBhI1BAAAEjEEAAASNQUAAQESNQQIABIxBAgAEjUD
+BhIgBAAAEiAECAASIAQgAQEOBCABAQgGIAICDhFtBSABHQgIBAEAAAAFIAEBEXkFIAEBEn0FIAAS
+gIEIIAISIQ4RgIUEIAEBHAkgAxIhDhGAhQgEIAASfQUAAg4ODgUAAQ4dDgcHAwgdDhEpAwYSFQMG
+HQgEIAEICAQgAQIIBCABDggFIAERKQgEIAEKCAUgABKAmQUgABKAnQYgARKAoQ4FIAASgKUGIAES
+gKkcBQAAEoCtBiABHBKAsQgAARKAuRGAvQUgABKAwQcgAgEOEoDBBAcBEjEGIAEBEYDJCAEAAgAA
+AAAAAwAAAUcBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuMAEAVA4URnJhbWV3b3JrRGlzcGxh
+eU5hbWUQLk5FVCBGcmFtZXdvcmsgNCgBACNTQ19hYTUzY2UxMmUwZDY0Y2FmOWEzNThkZWM1YTMy
+NDk5MgAABQEAAAAADgEACU1pY3Jvc29mdAAAHwEAGkNvcHlyaWdodCBAIE1pY3Jvc29mdCAyMDE2
+AAAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MB8D0AAAAAAAAAAAAADj4A
+AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+AAAAAAAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1z
+Y29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQ
+AAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhA
+AAD4AwAAAAAAAAAAAAD4AzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv
+/gAAAQAAAAEA86b/FgAAAQDzpv8WPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYA
+YQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAA
+ALAEWAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAANAMAAAEAMAAwADAAMAAwADQA
+YgAwAAAANAAKAAEAQwBvAG0AcABhAG4AeQBOAGEAbQBlAAAAAABNAGkAYwByAG8AcwBvAGYAdAAA
+AHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAEMAXwBhAGEANQAzAGMA
+ZQAxADIAZQAwAGQANgA0AGMAYQBmADkAYQAzADUAOABkAGUAYwA1AGEAMwAyADQAOQA5ADIAAABA
+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANQA4ADgANwAuADQAMgA3ADMA
+OQAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwBhAGEANQAzAGMAZQAx
+ADIAZQAwAGQANgA0AGMAYQBmADkAYQAzADUAOABkAGUAYwA1AGEAMwAyADQAOQA5ADIALgBkAGwA
+bAAAAFwAGwABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0
+ACAAQAAgAE0AaQBjAHIAbwBzAG8AZgB0ACAAMgAwADEANgAAAAAAeAAoAAEATwByAGkAZwBpAG4A
+YQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfAGEAYQA1ADMAYwBlADEAMgBlADAAZAA2ADQAYwBh
+AGYAOQBhADMANQA4AGQAZQBjADUAYQAzADIANAA5ADkAMgAuAGQAbABsAAAAaAAkAAEAUAByAG8A
+ZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwBhAGEANQAzAGMAZQAxADIAZQAwAGQANgA0AGMAYQBm
+ADkAYQAzADUAOABkAGUAYwA1AGEAMwAyADQAOQA5ADIAAABEAA8AAQBQAHIAbwBkAHUAYwB0AFYA
+ZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAOAA4ADcALgA0ADIANwAzADkAAAAAAEgADwABAEEAcwBz
+AGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAOAA4ADcALgA0ADIANwAzADkA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAID4AAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                      </arrayElements>
+                    </property>
                     <property
                       dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_aa53ce12e0d64caf9a358dec5a324992</property>
                     <property
                       dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">3</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepIdentity">false</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepNulls">false</property>
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
                     <property
                       dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg">LogID</property>
                     <property
-                      dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">05c372e4a7dc8c5ee2df57baa2580b5a</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\SEQ Load Data\DFT DimItem\Script Component.Connections[SQLREALWarehouse]"
                       connectionManagerID="Package.ConnectionManagers[SQL_REAL_Warehouse]"
                       connectionManagerRefId="Package.ConnectionManagers[SQL_REAL_Warehouse]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
+                      name="SQLREALWarehouse" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                      errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
+                      refId="Package\SEQ Load Data\DFT DimItem\Script Component.Inputs[Input 0]"
                       hasSideEffects="true"
-                      name="OLE DB Destination Input">
+                      name="Input 0">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[KeyValue]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="KeyValue"
-                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyValue]"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[KeyValue]" />
-                        <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rejects]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Rejects"
-                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rejects]"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[Rejects]" />
-                        <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LogTime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="LogTime"
-                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogTime]"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogTime]" />
-                        <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LogID]"
+                          refId="Package\SEQ Load Data\DFT DimItem\Script Component.Inputs[Input 0].Columns[SYSID]"
                           cachedDataType="i4"
-                          cachedName="LogID"
-                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[LogID]" />
+                          cachedName="SYSID"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[SYSID]" />
                         <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rn]"
+                          refId="Package\SEQ Load Data\DFT DimItem\Script Component.Inputs[Input 0].Columns[ASSORTMENT_DESC]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="ASSORTMENT_DESC"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[ASSORTMENT_DESC]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Script Component.Inputs[Input 0].Columns[BN_RETAIL]"
+                          cachedDataType="numeric"
+                          cachedName="BN_RETAIL"
+                          cachedPrecision="9"
+                          cachedScale="2"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_RETAIL]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Script Component.Inputs[Input 0].Columns[AUDIENCE_CODE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="AUDIENCE_CODE"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[AUDIENCE_CODE]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Script Component.Inputs[Input 0].Columns[BN_ORIG_DISCOUNT_SCHED]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="BN_ORIG_DISCOUNT_SCHED"
+                          lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[BN_ORIG_DISCOUNT_SCHED]" />
+                        <inputColumn
+                          refId="Package\SEQ Load Data\DFT DimItem\Script Component.Inputs[Input 0].Columns[rn]"
                           cachedDataType="i8"
                           cachedName="rn"
-                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowNumber]"
                           lineageId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output].Columns[rn]" />
-                        <inputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ComponentName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ComponentName"
-                          externalMetadataColumnId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentName]"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output].Columns[ComponentName]" />
                       </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
-                          dataType="i4"
-                          name="LogID" />
-                        <externalMetadataColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyValue]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="KeyValue" />
-                        <externalMetadataColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowNumber]"
-                          dataType="i4"
-                          name="RowNumber" />
-                        <externalMetadataColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rejects]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1000"
-                          name="Rejects" />
-                        <externalMetadataColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogTime]"
-                          dataType="dbTimeStamp"
-                          name="LogTime" />
-                        <externalMetadataColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentName]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="ComponentName" />
-                      </externalMetadataColumns>
+                      <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
+                      refId="Package\SEQ Load Data\DFT DimItem\Script Component.Outputs[Output 0]"
+                      name="Output 0"
+                      synchronousInputId="Package\SEQ Load Data\DFT DimItem\Script Component.Inputs[Input 0]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
@@ -23484,22 +24184,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="Derived Column Output"
                   startId="Package\SEQ Load Data\DFT DimItem\DER Audit.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output3]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output1]"
                   endId="Package\SEQ Load Data\DFT DimItem\ALL New and Type2.Inputs[Union All Input 2]"
                   name="Derived Column Output"
                   startId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output4]"
-                  endId="Package\SEQ Load Data\DFT DimItem\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  name="Derived Column Output"
-                  startId="Package\SEQ Load Data\DFT DimItem\Derived Column.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output1]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output2]"
                   endId="Package\SEQ Load Data\DFT DimItem\DST Insert.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
                   startId="Package\SEQ Load Data\DFT DimItem\DER Flags.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output2]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output3]"
                   endId="Package\SEQ Load Data\DFT DimItem\ALL New and Type2.Inputs[Union All Input 1]"
                   name="Derived Column Output"
                   startId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales FALSE.Outputs[Derived Column Output]" />
@@ -23529,22 +24224,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="No Sales and Inferred"
                   startId="Package\SEQ Load Data\DFT DimItem\CSPL SCD.Outputs[No Sales and Inferred]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output1]"
                   endId="Package\SEQ Load Data\DFT DimItem\STAT Source.Inputs[Input 0]"
                   name="OLE DB Source Output"
                   startId="Package\SEQ Load Data\DFT DimItem\SRC DimItem.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output1]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
                   endId="Package\SEQ Load Data\DFT DimItem\STAT DimItem.Inputs[Input 0]"
                   name="OLE DB Source Output"
                   startId="Package\SEQ Load Data\DFT DimItem\SRC DW.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 05]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 0]"
                   endId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Inputs[Conditional Split Input]"
                   name="Output 0"
                   startId="Package\SEQ Load Data\DFT DimItem\STAT Source.Outputs[Output 0]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 04]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 01]"
                   endId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales FALSE.Inputs[Derived Column Input]"
                   name="Output 0"
                   startId="Package\SEQ Load Data\DFT DimItem\STAT New.Outputs[Output 0]" />
@@ -23554,23 +24249,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   name="Output 0"
                   startId="Package\SEQ Load Data\DFT DimItem\STAT DimItem.Outputs[Output 0]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 01]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 03]"
                   endId="Package\SEQ Load Data\DFT DimItem\DST SCD-1.Inputs[OLE DB Destination Input]"
                   name="Output 0"
                   startId="Package\SEQ Load Data\DFT DimItem\STAT SCD-1.Outputs[Output 0]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 03]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 04]"
                   endId="Package\SEQ Load Data\DFT DimItem\DST Inferred.Inputs[OLE DB Command Input]"
                   name="Output 0"
                   startId="Package\SEQ Load Data\DFT DimItem\STAT Inferred.Outputs[Output 0]" />
                 <path
-                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 0]"
+                  refId="Package\SEQ Load Data\DFT DimItem.Paths[Output 05]"
                   endId="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE.Inputs[Derived Column Input]"
                   name="Output 0"
                   startId="Package\SEQ Load Data\DFT DimItem\STAT SCD-2.Outputs[Output 0]" />
                 <path
                   refId="Package\SEQ Load Data\DFT DimItem.Paths[Rejects]"
-                  endId="Package\SEQ Load Data\DFT DimItem\Derived Column.Inputs[Derived Column Input]"
+                  endId="Package\SEQ Load Data\DFT DimItem\Script Component.Inputs[Input 0]"
                   name="Rejects"
                   startId="Package\SEQ Load Data\DFT DimItem\Conditional Split.Outputs[Rejects]" />
                 <path
@@ -24312,28 +25007,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="136,44"
+          Size="140,42"
           Id="Package.EventHandlers[OnError]\SQL OnError"
           TopLeft="5.5,5.5" />
-        <AnnotationLayout
-          Text="SQL OnError: Executes when an error ocurs&#xA;during the execution of a package and marks the audit log&#xA;tables with the error status and time."
-          ParentId="Package.EventHandlers[OnError]"
-          Size="318,80"
-          Id="7371b3d8-d70b-4d18-8ce7-fd2da018c131"
-          TopLeft="164.254716981132,5.5">
-          <AnnotationLayout.FontInfo>
-            <mssge:FontInfo
-              Family="Tahoma"
-              Size="11.25"
-              Color="#FF080000">
-              <mssge:FontInfo.TextDecorations>
-                <av:TextDecorationCollection />
-              </mssge:FontInfo.TextDecorations>
-            </mssge:FontInfo>
-          </AnnotationLayout.FontInfo>
-        </AnnotationLayout>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -24407,6 +25085,58 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="190,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DST SCD2 Inactive Log"
+          TopLeft="406.5,617.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\SEQ Load Data\DFT DimItem\Conditional Split"
+          TopLeft="454,157" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\SEQ Load Data\DFT DimItem\Script Component"
+          TopLeft="717,158" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\SEQ Load Data\DFT DimItem\Left Join"
+          TopLeft="220,311.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\SEQ Load Data\DFT DimItem\STAT Inferred"
+          TopLeft="72.0000000000001,515.5" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\SEQ Load Data\DFT DimItem\Multicast"
+          TopLeft="440.5,515.5" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\SEQ Load Data\DFT DimItem\STAT SCD-1"
+          TopLeft="623.5,515.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DST Inferred"
+          TopLeft="12.5000000000001,617.5" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DER Flags"
+          TopLeft="662.5,923.5" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DST Insert"
+          TopLeft="661,1025.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\SEQ Load Data\DFT DimItem\STAT DimItem"
+          TopLeft="5.50000000000011,209.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE"
+          TopLeft="636,719.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\SEQ Load Data\DFT DimItem\DST SCD-1"
+          TopLeft="856,617.5" />
+        <NodeLayout
           Size="141,42"
           Id="Package\SEQ Load Data\DFT DimItem\STAT Source"
           TopLeft="210,107.5" />
@@ -24414,10 +25144,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Size="138,42"
           Id="Package\SEQ Load Data\DFT DimItem\STAT SCD-2"
           TopLeft="657.5,617.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\SEQ Load Data\DFT DimItem\Left Join"
-          TopLeft="220,311.5" />
         <NodeLayout
           Size="127,42"
           Id="Package\SEQ Load Data\DFT DimItem\CSPL SCD"
@@ -24439,55 +25165,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Id="Package\SEQ Load Data\DFT DimItem\STAT New"
           TopLeft="215.5,617.5" />
         <NodeLayout
-          Size="147,42"
-          Id="Package\SEQ Load Data\DFT DimItem\STAT Inferred"
-          TopLeft="72.0000000000001,515.5" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\SEQ Load Data\DFT DimItem\DER Has_Sales TRUE"
-          TopLeft="636,719.5" />
-        <NodeLayout
-          Size="144,42"
-          Id="Package\SEQ Load Data\DFT DimItem\SRC DimItem"
-          TopLeft="208.5,5.5" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\SEQ Load Data\DFT DimItem\STAT DimItem"
-          TopLeft="5.50000000000011,209.5" />
-        <NodeLayout
-          Size="122,42"
-          Id="Package\SEQ Load Data\DFT DimItem\Multicast"
-          TopLeft="440.5,515.5" />
-        <NodeLayout
-          Size="190,42"
-          Id="Package\SEQ Load Data\DFT DimItem\DST SCD2 Inactive Log"
-          TopLeft="406.5,617.5" />
-        <NodeLayout
-          Size="138,42"
-          Id="Package\SEQ Load Data\DFT DimItem\STAT SCD-1"
-          TopLeft="623.5,515.5" />
-        <NodeLayout
-          Size="142,42"
-          Id="Package\SEQ Load Data\DFT DimItem\DST Inferred"
-          TopLeft="12.5000000000001,617.5" />
-        <NodeLayout
-          Size="128,42"
-          Id="Package\SEQ Load Data\DFT DimItem\DER Flags"
-          TopLeft="662.5,923.5" />
-        <NodeLayout
-          Size="131,42"
-          Id="Package\SEQ Load Data\DFT DimItem\DST Insert"
-          TopLeft="661,1025.5" />
-        <NodeLayout
           Size="175,42"
           Id="Package\SEQ Load Data\DFT DimItem\ALL New and Type2"
           TopLeft="639,821.5" />
         <NodeLayout
-          Size="133,42"
-          Id="Package\SEQ Load Data\DFT DimItem\DST SCD-1"
-          TopLeft="856,617.5" />
+          Size="144,42"
+          Id="Package\SEQ Load Data\DFT DimItem\SRC DimItem"
+          TopLeft="208.5,5.5" />
         <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 01]"
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 03]"
           TopLeft="692.5,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24521,19 +25207,99 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 0]"
-          TopLeft="726.5,659.5">
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 02]"
+          TopLeft="80.5000000000001,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,60"
+              EndConnector="181.166666666667,60"
               Start="0,0"
-              End="0,52.5">
+              End="181.166666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="177.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="177.166666666667,35.5301794453507"
+                    Point2="181.166666666667,35.5301794453507"
+                    Point3="181.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="181.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 01]"
+          TopLeft="280.5,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="203,59.9999999999999"
+              Start="0,0"
+              End="203,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.9999999999999"
+                    Point2="0,29.9999999999999"
+                    Point3="4,29.9999999999999" />
+                  <mssgle:LineSegment
+                    End="199,29.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="199,29.9999999999999"
+                    Point2="203,29.9999999999999"
+                    Point3="203,33.9999999999999" />
+                  <mssgle:LineSegment
+                    End="203,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 0]"
+          TopLeft="351,128.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="103,43.8333333333333"
+              Start="0,0"
+              End="95.5,43.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.5321100917431,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.5321100917431,0"
+                    Point2="59.5321100917431,0"
+                    Point3="59.5321100917431,4" />
+                  <mssgle:LineSegment
+                    End="59.5321100917431,39.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.5321100917431,39.8333333333333"
+                    Point2="59.5321100917431,43.8333333333333"
+                    Point3="63.5321100917431,43.8333333333333" />
+                  <mssgle:LineSegment
+                    End="95.5,43.8333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24544,7 +25310,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output1]"
-          TopLeft="80.5000000000001,149.5">
+          TopLeft="280.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -24566,7 +25332,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Load Data\DFT DimItem.Paths[OLE DB Source Output]"
-          TopLeft="280.5,47.5">
+          TopLeft="80.5000000000001,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -24750,40 +25516,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output3]"
-          TopLeft="726.5,761.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="27.8333333333334,60"
-              Start="0,0"
-              End="27.8333333333334,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.673839184598" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.673839184598"
-                    Point2="0,35.673839184598"
-                    Point3="4,35.673839184598" />
-                  <mssgle:LineSegment
-                    End="23.8333333333334,35.673839184598" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.8333333333334,35.673839184598"
-                    Point2="27.8333333333334,35.673839184598"
-                    Point3="27.8333333333334,39.673839184598" />
-                  <mssgle:LineSegment
-                    End="27.8333333333334,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output2]"
           TopLeft="483.5,761.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24817,7 +25549,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output1]"
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output2]"
           TopLeft="726.5,965.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24830,6 +25562,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output1]"
+          TopLeft="726.5,761.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="27.8333333333334,60"
+              Start="0,0"
+              End="27.8333333333334,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.673839184598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.673839184598"
+                    Point2="0,35.673839184598"
+                    Point3="4,35.673839184598" />
+                  <mssgle:LineSegment
+                    End="23.8333333333334,35.673839184598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.8333333333334,35.673839184598"
+                    Point2="27.8333333333334,35.673839184598"
+                    Point3="27.8333333333334,39.673839184598" />
+                  <mssgle:LineSegment
+                    End="27.8333333333334,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24870,6 +25636,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Conditional Split Default Output]"
+          TopLeft="454,183.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-109.5,46.8333333333333"
+              Start="0,0"
+              End="-102,46.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-42.2110091743119,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42.2110091743119,0"
+                    Point2="-46.2110091743119,0"
+                    Point3="-46.2110091743119,4" />
+                  <mssgle:LineSegment
+                    End="-46.2110091743119,42.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-46.2110091743119,42.8333333333333"
+                    Point2="-46.2110091743119,46.8333333333333"
+                    Point3="-50.2110091743119,46.8333333333333" />
+                  <mssgle:LineSegment
+                    End="-102,46.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-116.824915424312,-17.658203125,141.2278125,11.658203125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24967,31 +25769,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 04]"
-          TopLeft="280.5,659.5">
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Rejects]"
+          TopLeft="611,178.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="203,59.9999999999999"
+              EndConnector="106,0"
               Start="0,0"
-              End="203,52.4999999999999">
+              End="98.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.9999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.9999999999999"
-                    Point2="0,29.9999999999999"
-                    Point3="4,29.9999999999999" />
+                    End="98.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="32.732421875,5,33.03515625,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 05]"
+          TopLeft="726.5,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="199,29.9999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="199,29.9999999999999"
-                    Point2="203,29.9999999999999"
-                    Point3="203,33.9999999999999" />
-                  <mssgle:LineSegment
-                    End="203,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25001,7 +25815,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 03]"
+          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 04]"
           TopLeft="145.5,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25034,168 +25848,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 02]"
-          TopLeft="80.5000000000001,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="181.166666666667,60"
-              Start="0,0"
-              End="181.166666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
-                  <mssgle:LineSegment
-                    End="177.166666666667,35.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="177.166666666667,35.5301794453507"
-                    Point2="181.166666666667,35.5301794453507"
-                    Point3="181.166666666667,39.5301794453507" />
-                  <mssgle:LineSegment
-                    End="181.166666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\SEQ Load Data\DFT DimItem\Conditional Split"
-          TopLeft="411,157" />
-        <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Output 05]"
-          TopLeft="351,128.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="60,49.5"
-              Start="0,0"
-              End="52.5,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="26,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26,0"
-                    Point2="30,0"
-                    Point3="30,4" />
-                  <mssgle:LineSegment
-                    End="30,45.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="30,45.5"
-                    Point2="30,49.5"
-                    Point3="34,49.5" />
-                  <mssgle:LineSegment
-                    End="52.5,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Conditional Split Default Output]"
-          TopLeft="411,183.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-66.5,46.8333333333333"
-              Start="0,0"
-              End="-59,46.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-24.0642201834863,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.0642201834863,0"
-                    Point2="-28.0642201834863,0"
-                    Point3="-28.0642201834863,4" />
-                  <mssgle:LineSegment
-                    End="-28.0642201834863,42.8333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-28.0642201834863,42.8333333333333"
-                    Point2="-28.0642201834863,46.8333333333333"
-                    Point3="-32.0642201834863,46.8333333333333" />
-                  <mssgle:LineSegment
-                    End="-59,46.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-98.6781264334863,-17.658203125,141.2278125,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\SEQ Load Data\DFT DimItem\Derived Column"
-          TopLeft="624,157" />
-        <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Rejects]"
-          TopLeft="568,178">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="56,0"
-              Start="0,0"
-              End="48.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="48.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="7.732421875,5,33.03515625,11.384765625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\SEQ Load Data\DFT DimItem\OLE DB Destination"
-          TopLeft="831,159" />
-        <EdgeLayout
-          Id="Package\SEQ Load Data\DFT DimItem.Paths[Derived Column Output4]"
-          TopLeft="780,179">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="51,0"
-              Start="0,0"
-              End="43.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="43.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -25204,19 +25856,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Load Data\DFT DimItem\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -63,6 +63,7 @@
     <Build Include="etl.up_DimItem_UpdateSCD1.sql" />
     <Build Include="audit.tbl_RejectsLog.sql" />
     <Build Include="audit.sql" />
+    <Build Include="audit.up_CreateRjectsLog.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="etl.sql" />

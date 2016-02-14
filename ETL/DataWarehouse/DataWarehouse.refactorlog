@@ -42,4 +42,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ComponentName" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="657c18f4-0955-4917-93b8-a1eaf23ac767" ChangeDateTime="02/13/2016 01:04:29">
+    <Property Name="ElementName" Value="[audit].[cix_ReduceLog]" />
+    <Property Name="ElementType" Value="SqlPrimaryKeyConstraint" />
+    <Property Name="ParentElementName" Value="[audit].[RejectsLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[cix_RejectsLog]" />
+  </Operation>
 </Operations>
