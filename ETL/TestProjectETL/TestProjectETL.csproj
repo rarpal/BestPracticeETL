@@ -55,7 +55,7 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UTst.audit.up_CreateRejectsLog.cs">
-      <SubType>Component</SubType>
+      <SubType>Designer</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
