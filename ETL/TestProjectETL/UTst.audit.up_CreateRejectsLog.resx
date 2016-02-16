@@ -117,22 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="checksumCondition1.Configuration" xml:space="preserve">
+    <value>Press to configure</value>
+  </metadata>
   <data name="audit_up_CreateRejectsLogTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for audit.up_CreateRejectsLog
-DECLARE @RC AS INT, @LogID AS INT, @ComponentName AS VARCHAR (50), @KeyValue AS VARCHAR (50), @RowNumber AS INT, @Rejects AS VARCHAR (1000);
+DECLARE @RC AS INT, @LogID AS INT, @ComponentName AS VARCHAR (50), @KeyField AS VARCHAR (50), @KeyFieldValue AS VARCHAR (50), @RowNumber AS INT, @Rejects AS VARCHAR (1000);
 
 SELECT @RC = 0,
-       @LogID = 0,
-       @ComponentName = NULL,
-       @KeyValue = NULL,
-       @RowNumber = 0,
-       @Rejects = NULL;
+       @LogID = 99,
+       @ComponentName = 'Test Component',
+	   @KeyField = 'Test_Field',
+       @KeyFieldValue = 'TESTCODE',
+       @RowNumber = 2,
+       @Rejects = 'FIELD2:34,FIELD3:FOO,FIELD4:BAR';
 
-EXECUTE @RC = [audit].[up_CreateRejectsLog] @LogID, @ComponentName, @KeyValue, @RowNumber, @Rejects;
+EXECUTE @RC = [audit].[up_CreateRejectsLog] @LogID, @ComponentName, @KeyField, @KeyFieldValue, @RowNumber, @Rejects;
 
-SELECT @RC AS RC;
+SELECT 
+       LogID,
+       ComponentName,
+	   KeyField,
+       KeyFieldValue,
+       RowNumber,
+       Rejects
+FROM audit.RejectsLog
 
 </value>
+  </data>
+  <data name="audit_up_CreateRejectsLogTest_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run before
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+DELETE audit.RejectsLog WHERE LogID = 99</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
