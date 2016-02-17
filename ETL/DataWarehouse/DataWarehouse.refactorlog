@@ -63,4 +63,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="KeyValue" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="289a0521-5d48-4f2d-be2b-30c43a2e86b8" ChangeDateTime="02/17/2016 00:23:18">
+    <Property Name="ElementName" Value="[audit].[tbl_ValidationLog].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[audit].[tbl_ValidationLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LogID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="777e6f23-269c-4054-a51a-9a867fa46248" ChangeDateTime="02/17/2016 00:25:27">
+    <Property Name="ElementName" Value="[audit].[tbl_ValidationLog].[Se]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[audit].[tbl_ValidationLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="severity" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5c758a2e-cfce-4730-8870-a9528c529a5d" ChangeDateTime="02/17/2016 00:42:13">
+    <Property Name="ElementName" Value="[audit].[tbl_ValidationLog]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[audit]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[ValidationLog]" />
+  </Operation>
 </Operations>

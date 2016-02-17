@@ -91,6 +91,7 @@
     <Build Include="admin.sql" />
     <Build Include="util.sql" />
     <PostDeploy Include="Script.v1_PostDeployment.sql" />
+    <Build Include="audit.tbl_ValidationLog.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="etl.sql" />
