@@ -39,26 +39,28 @@ namespace TestProjectETL
         {
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction audit_up_CreateRejectsLogTest_TestAction;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UTst));
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction audit_up_CreateRejectsLogTest_PretestAction;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition rowCountCondition1;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition scalarValueCondition1;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition scalarValueCondition2;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition scalarValueCondition3;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition scalarValueCondition4;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition scalarValueCondition5;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition scalarValueCondition6;
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition rowCountCondition1;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ChecksumCondition checksumCondition1;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction audit_up_CreateRejectsLogTest_PretestAction;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction audit_up_CreateRejectsLogTest_PosttestAction;
             this.audit_up_CreateRejectsLogTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             audit_up_CreateRejectsLogTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-            audit_up_CreateRejectsLogTest_PretestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+            rowCountCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition();
             scalarValueCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
             scalarValueCondition2 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
             scalarValueCondition3 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
             scalarValueCondition4 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
             scalarValueCondition5 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
             scalarValueCondition6 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
-            rowCountCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition();
             checksumCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ChecksumCondition();
+            audit_up_CreateRejectsLogTest_PretestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+            audit_up_CreateRejectsLogTest_PosttestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             // 
             // audit_up_CreateRejectsLogTest_TestAction
             // 
@@ -72,15 +74,12 @@ namespace TestProjectETL
             audit_up_CreateRejectsLogTest_TestAction.Conditions.Add(checksumCondition1);
             resources.ApplyResources(audit_up_CreateRejectsLogTest_TestAction, "audit_up_CreateRejectsLogTest_TestAction");
             // 
-            // audit_up_CreateRejectsLogTestData
+            // rowCountCondition1
             // 
-            this.audit_up_CreateRejectsLogTestData.PosttestAction = null;
-            this.audit_up_CreateRejectsLogTestData.PretestAction = audit_up_CreateRejectsLogTest_PretestAction;
-            this.audit_up_CreateRejectsLogTestData.TestAction = audit_up_CreateRejectsLogTest_TestAction;
-            // 
-            // audit_up_CreateRejectsLogTest_PretestAction
-            // 
-            resources.ApplyResources(audit_up_CreateRejectsLogTest_PretestAction, "audit_up_CreateRejectsLogTest_PretestAction");
+            rowCountCondition1.Enabled = true;
+            rowCountCondition1.Name = "rowCountCondition1";
+            rowCountCondition1.ResultSet = 1;
+            rowCountCondition1.RowCount = 1;
             // 
             // scalarValueCondition1
             // 
@@ -142,18 +141,25 @@ namespace TestProjectETL
             scalarValueCondition6.ResultSet = 1;
             scalarValueCondition6.RowNumber = 1;
             // 
-            // rowCountCondition1
-            // 
-            rowCountCondition1.Enabled = true;
-            rowCountCondition1.Name = "rowCountCondition1";
-            rowCountCondition1.ResultSet = 1;
-            rowCountCondition1.RowCount = 1;
-            // 
             // checksumCondition1
             // 
             checksumCondition1.Checksum = "-2001793917";
             checksumCondition1.Enabled = true;
             checksumCondition1.Name = "checksumCondition1";
+            // 
+            // audit_up_CreateRejectsLogTest_PretestAction
+            // 
+            resources.ApplyResources(audit_up_CreateRejectsLogTest_PretestAction, "audit_up_CreateRejectsLogTest_PretestAction");
+            // 
+            // audit_up_CreateRejectsLogTestData
+            // 
+            this.audit_up_CreateRejectsLogTestData.PosttestAction = audit_up_CreateRejectsLogTest_PosttestAction;
+            this.audit_up_CreateRejectsLogTestData.PretestAction = audit_up_CreateRejectsLogTest_PretestAction;
+            this.audit_up_CreateRejectsLogTestData.TestAction = audit_up_CreateRejectsLogTest_TestAction;
+            // 
+            // audit_up_CreateRejectsLogTest_PosttestAction
+            // 
+            resources.ApplyResources(audit_up_CreateRejectsLogTest_PosttestAction, "audit_up_CreateRejectsLogTest_PosttestAction");
         }
 
         #endregion

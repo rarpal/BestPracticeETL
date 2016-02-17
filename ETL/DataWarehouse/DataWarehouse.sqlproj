@@ -90,6 +90,7 @@
     <Build Include="util.uf_QuoteName.sql" />
     <Build Include="admin.sql" />
     <Build Include="util.sql" />
+    <PostDeploy Include="Script.v1_PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="etl.sql" />
